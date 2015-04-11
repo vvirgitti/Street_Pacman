@@ -1,15 +1,15 @@
 Pacman.js - client-side GPS-tracking game.
 ==========================================
-
-
-
-
-
-
-
-
+To try out the player geolocation feature on a GPS-enabled phone:
+ - clone the source code on a local folder
+ - type ```npm install``` to install the required npm packages
+ - startup the local server with ``` http-server ```. 
+ - if you don't have http-server, type ```npm install -g http-server``` in the command line
+ - setup ngrok in your command line by typing ``` /Users/*youruserfoldernamehere*/Downloads/ngrok 8080 ```
+ - open up the url that ngrok provides in your phone browser (with geolocation activated), example: ``` https://*bunchofnumbersandletters*.ngrok.com/ ```
 
 Built with:
+
 GMaps.js - A Javascript library that simplifies your life
 =========================================================
 
