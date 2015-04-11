@@ -38,7 +38,7 @@ module.exports = function(grunt) {
           'lib/gmaps.events.js',
           'lib/gmaps.utils.js',
           'lib/gmaps.native_extensions.js'
-        ],
+          ],
         dest: 'gmaps.js'
       }
     },
@@ -50,11 +50,28 @@ module.exports = function(grunt) {
         vendor: 'http://maps.google.com/maps/api/js?sensor=true',
         styles: 'test/style.css'
       },
-      src : '<%= concat.dist.src %>'
+      src : [
+          'lib/gmaps.core.js',
+          'lib/gmaps.controls.js',
+          'lib/gmaps.markers.js',
+          'lib/gmaps.overlays.js',
+          'lib/gmaps.geometry.js',
+          'lib/gmaps.layers.js',
+          'lib/gmaps.routes.js',
+          'lib/gmaps.geofences.js',
+          'lib/gmaps.static.js',
+          'lib/gmaps.map_types.js',
+          'lib/gmaps.styles.js',
+          'lib/gmaps.streetview.js',
+          'lib/gmaps.events.js',
+          'lib/gmaps.utils.js',
+          'lib/gmaps.native_extensions.js',
+          'public/js/*.js'
+          ], 
     },
 
     watch : {
-      files : '<%= concat.dist.src %>',
+      files : '<%= jasmine.src %>',
       tasks : 'default'
     },
 
