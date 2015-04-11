@@ -24,11 +24,18 @@ function updatePlayerLocation(position) {
   player.getLocation(coords);
   console.log(player.coordinates);
   
-  map.removeMarkers();
+  map.markers.forEach( function(marker) {
+    if(marker.title === "player marker") {
+      map.removeMarker(marker);
+    }
+  });
+   
   map.addMarker({
     lat: coords.latitude, 
-    lng: coords.longitude
+    lng: coords.longitude,
+    title: "player marker"
   });
+
   console.log(map.markers);
   map.setCenter(coords.latitude, coords.longitude)
 };

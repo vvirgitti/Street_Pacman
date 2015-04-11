@@ -1,19 +1,17 @@
 var pellet = new Pellet();
 var lat = 51.5;
-var lon = -0.3;
-var pelletMarkers = [];
+var lon = -0.03;
 
 $(document).ready(function() {
-  setPelletPosition();
+  setPelletPosition(lat, lon);
 });
 
-function setPelletPosition() {
+function setPelletPosition(lat, lon) {
   pellet.setPosition(lat, lon)
-  pelletMarkers.push(pellet.coordinates)
-
-  pelletMarkers.forEach( function(marker) {
-    map.addMarkers(marker);
+  
+  map.addMarker({
+    lat: pellet.coordinates.lat,
+    lng: pellet.coordinates.lng,
+    title: "pellet marker"
   });
-
-  console.log(pellet) 
 };
