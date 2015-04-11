@@ -1,3 +1,15 @@
+Pacman.js - client-side GPS-tracking game.
+==========================================
+
+
+
+
+
+
+
+
+
+Built with:
 GMaps.js - A Javascript library that simplifies your life
 =========================================================
 
