@@ -5,8 +5,9 @@ To try out the player geolocation feature on a GPS-enabled phone:
  - type ```npm install``` to install the required npm packages
  - startup the local server with ``` http-server ```. 
  - if you don't have http-server, type ```npm install -g http-server``` in the command line
+ - download [ngrok](http://ngrok.com/)
  - setup ngrok in your command line by typing ``` /Users/*youruserfoldernamehere*/Downloads/ngrok 8080 ```
- - open up the url that ngrok provides in your phone browser (with geolocation activated), example: ``` https://*bunchofnumbersandletters*.ngrok.com/ ```
+ - open up the url that ngrok provides in your phone browser (with geolocation activated), example: ``` http://*bunchofnumbersandletters*.ngrok.com/ ```
 
 Built with:
 
