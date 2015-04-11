@@ -5,10 +5,16 @@ var coords = {
 
 var player = new Player();
 
-setInterval(geolocatePlayer, 3000);
+var options = {
+  enableHighAccuracy: true
+}
+
+$(document).ready(function() {
+  setInterval(geolocatePlayer, 3000);
+});
 
 function geolocatePlayer() {
-  navigator.geolocation.getCurrentPosition(updatePlayerLocation);
+  navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
 };
 
 function updatePlayerLocation(position) {
@@ -18,11 +24,22 @@ function updatePlayerLocation(position) {
   player.getLocation(coords);
   console.log(player.coordinates);
   
-  map.removeMarkers();
+  map.markers.forEach( function(marker) {
+    if(marker.title === "player marker") {
+      map.removeMarker(marker);
+    }
+  });
+   
   map.addMarker({
     lat: coords.latitude, 
-    lng: coords.longitude
+    lng: coords.longitude,
+    title: "player marker"
   });
+
   console.log(map.markers);
   map.setCenter(coords.latitude, coords.longitude)
+};
+
+function errorCallback() {
+  console.log("the geolocation function didn't load properly")
 };
