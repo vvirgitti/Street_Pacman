@@ -5,10 +5,16 @@ var coords = {
 
 var player = new Player();
 
-setInterval(geolocatePlayer, 3000);
+var options = {
+  enableHighAccuracy: true
+}
+
+$(document).ready(function() {
+  setInterval(geolocatePlayer, 3000);
+});
 
 function geolocatePlayer() {
-  navigator.geolocation.getCurrentPosition(updatePlayerLocation);
+  navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
 };
 
 function updatePlayerLocation(position) {
@@ -25,4 +31,8 @@ function updatePlayerLocation(position) {
   });
   console.log(map.markers);
   map.setCenter(coords.latitude, coords.longitude)
+};
+
+function errorCallback() {
+  console.log("the geolocation function didn't load properly")
 };

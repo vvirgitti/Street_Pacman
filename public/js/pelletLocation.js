@@ -3,8 +3,9 @@ var lat = 51.5;
 var lon = -0.3;
 var pelletMarkers = [];
 
-
-setPelletPosition();
+$(document).ready(function() {
+  setPelletPosition();
+});
 
 function setPelletPosition() {
   pellet.setPosition(lat, lon)
