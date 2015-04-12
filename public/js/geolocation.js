@@ -3,15 +3,9 @@ var coords = {
   longitude: undefined
 };
 
-var player = new Player();
-
 var options = {
   enableHighAccuracy: true
 };
-
-$(document).ready(function() {
-  setInterval(geolocatePlayer, 3000);
-});
 
 function geolocatePlayer() {
   navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
@@ -27,7 +21,6 @@ function updatePlayerLocation(position) {
   removeCustomMarker(player.tag);
   addCustomMarker(player.tag, player.coordinates.latitude, player.coordinates.longitude, player.icon);
 
-  console.log(map.markers);
   map.setCenter(coords.latitude, coords.longitude);
 }
 
