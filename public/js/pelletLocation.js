@@ -9,5 +9,5 @@ $(document).ready(function() {
 function setPelletPosition(lat, lon) {
   pellet.setPosition(lat, lon);
   
-  addCustomMarker(pellet.tag, pellet.coordinates.lat, pellet.coordinates.lon);
+  addCustomMarker(pellet.tag, pellet.coordinates.lat, pellet.coordinates.lng);
 }
