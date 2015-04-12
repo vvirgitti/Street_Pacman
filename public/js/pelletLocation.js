@@ -7,11 +7,7 @@ $(document).ready(function() {
 });
 
 function setPelletPosition(lat, lon) {
-  pellet.setPosition(lat, lon)
+  pellet.setPosition(lat, lon);
   
-  map.addMarker({
-    lat: pellet.coordinates.lat,
-    lng: pellet.coordinates.lng,
-    title: "pellet marker"
-  });
-};
+  addCustomMarker(pellet.tag);
+}

@@ -47,7 +47,7 @@ module.exports = function(grunt) {
       options: {
         template: 'test/template/jasmine-gmaps.html',
         specs: 'test/spec/*.js',
-        vendor: 'http://maps.google.com/maps/api/js?sensor=true',
+        vendor: ['https://code.jquery.com/jquery-2.1.3.min.js','http://maps.google.com/maps/api/js?sensor=true'],
         styles: 'test/style.css'
       },
       src : [
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
           'lib/gmaps.utils.js',
           'lib/gmaps.native_extensions.js',
           'public/js/*.js'
-          ], 
+          ] 
     },
 
     watch : {
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
     },
 
     jshint : {
-      all : ['Gruntfile.js']
+      all : ['Gruntfile.js', 'public/js/*.js']
     },
 
     umd : {
