@@ -27,6 +27,7 @@
     "grunt-umd": "~1.3.0"
   },
   "dependencies": {
-    "express": "^4.12.3"
+    "express": "^4.12.3",
+    "throng": "^1.0.0"
   }
 }
