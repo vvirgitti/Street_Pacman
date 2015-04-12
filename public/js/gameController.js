@@ -7,5 +7,21 @@ $(document).ready(function() {
   geolocatePlayer();
   setInterval(geolocatePlayer, 3000);
   setPelletPosition(lat, lon);
-  setInterval(calculateDistance, 5000);
+  appendScore();
+  setInterval(eatPellet, 5000);
 });
+
+function eatPellet() {
+  calculateDistance();
+  if(dist < 40) { 
+    removeCustomMarker(pellet.tag);
+    player.score += 1;
+    console.log(player.score);
+  };
+}
+
+function appendScore() {
+  $('#score').text( function() {
+    return "Score:" + player.score
+  });
+}

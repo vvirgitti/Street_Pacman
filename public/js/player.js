@@ -5,6 +5,7 @@ var Player = function() {
   };
   this.tag = "player";
   this.icon = '../images/mini_Pacman.png';
+  this.score = 0;
 };
 
 Player.prototype.getLocation = function(geolocation) {
