@@ -25,8 +25,8 @@ function updatePlayerLocation(position) {
   console.log(player.coordinates);
 
   removeCustomMarker(player.tag);
-  addCustomMarker(player.tag, player.coordinates.latitude, player.coordinates.longitude);
-  
+  addCustomMarker(player.tag, player.coordinates.latitude, player.coordinates.longitude, player.icon);
+
   console.log(map.markers);
   map.setCenter(coords.latitude, coords.longitude);
 }
