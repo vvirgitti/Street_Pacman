@@ -4,7 +4,7 @@ var Pellet = function() {
     lng: undefined
   };
   this.tag = "pellet";
-  this.icon = 'http://s2.postimg.org/pb1fe2rid/pellets_small.png';
+  this.icon = '../images/pellets_small.png';
 };
 
 Pellet.prototype.setPosition = function(lat, lon) {
