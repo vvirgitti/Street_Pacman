@@ -20,8 +20,6 @@ function updatePlayerLocation(position) {
 
   removeCustomMarker(player.tag);
   addCustomMarker(player.tag, player.coordinates.latitude, player.coordinates.longitude, player.icon);
-
-  map.setCenter(coords.latitude, coords.longitude);
 }
 
 function errorCallback() {

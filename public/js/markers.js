@@ -14,5 +14,4 @@ function addCustomMarker(tag, lat, lon, icon) {
     title: tag,
     icon: icon,
   });
-  map.setZoom(20);
 }
