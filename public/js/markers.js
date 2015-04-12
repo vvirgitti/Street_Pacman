@@ -7,10 +7,10 @@ function removeCustomMarker(tag) {
   });
 }
 
-function addCustomMarker(tag) {
+function addCustomMarker(tag, lat, lon) {
   map.addMarker({
-    lat: coords.latitude, 
-    lng: coords.longitude,
+    lat: lat, 
+    lng: lon,
     title: tag
   });
 }

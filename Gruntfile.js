@@ -68,7 +68,6 @@ module.exports = function(grunt) {
           'lib/gmaps.native_extensions.js',
           'public/js/player.js',
           'public/js/pellet.js',
-          'public/js/*.js'
           ] 
     },
 
