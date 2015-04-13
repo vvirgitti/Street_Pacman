@@ -4,6 +4,9 @@ var server = require('http').createServer(app);
 var throng = require('throng');
 var port = process.env.PORT || 3000;
 var WORKERS = process.env.WEB_CONCURRENCY || 1;
+var io = require('socket.io')();
+
+  app.use(express.static('public'));
 
 throng(start, {
   workers: WORKERS,
@@ -11,7 +14,6 @@ throng(start, {
 });
 
 function start() {
-  app.use(express.static('public'));
 
   app.get('/', function(req, res) {
     res.sendFile('index.html');

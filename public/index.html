@@ -13,15 +13,17 @@
   <script src="js/gmaps.js"></script>
   <script src="js/player.js"></script>
   <script src="js/pellet.js"></script>
-  <script src="js/geolocation.js"></script>
+  <script src="js/playerGeolocation.js"></script>
   <script src="js/pelletLocation.js"></script>
-  <script src="js/markers.js"></script>
-  <script src="js/distance.js"></script>
+  <script src="js/markerHelpers.js"></script>
+  <script src="js/gameLogic.js"></script>
   <script src="js/gameController.js"></script>
 </head>
 <body>
   <div id="map"></div>
   <div id="score"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/socket.js"></script>
   <script>
   var map = new GMaps({
     el: '#map',
@@ -30,7 +32,5 @@
   });
   map.setZoom(20);
   </script>
-
-
 </body>
 </html>

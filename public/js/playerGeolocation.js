@@ -18,21 +18,24 @@ function initPlayerLocation() {
 function updatePlayerLocation(position) {
   coords.latitude = position.coords.latitude;
   coords.longitude = position.coords.longitude;
+  
   player.getLocation(coords);
-
   modifyMarkerPosition(player);
   map.setCenter(coords.latitude, coords.longitude);
-  console.log(player.coordinates);
+  
   eatPelletChance();
+
+  console.log(player.coordinates);
 }
 
 function startingLocation(position) {
   coords.latitude = position.coords.latitude;
   coords.longitude = position.coords.longitude;
-
+  
   player.getLocation(coords);
-  console.log(player.coordinates);
   addCustomMarker(player);
+
+  console.log(player.coordinates);
 }
 
 function errorCallback() {

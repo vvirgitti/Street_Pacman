@@ -1,7 +1,7 @@
 // tags must be strings
-function removeCustomMarker(tag) {
+function removeCustomMarker(object) {
   map.markers.forEach( function(marker) {
-    if(marker.title === tag) {
+    if(marker.title === object.tag) {
       map.removeMarker(marker);
     }
   });
