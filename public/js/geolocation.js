@@ -7,31 +7,31 @@ var options = {
   enableHighAccuracy: true
 };
 
-function updatePlayerLocation() {
-  navigator.geolocation.getCurrentPosition(updateLocation, errorCallback, options);
+function queryGPStracker() {
+  navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
 }
 
-function updateLocation(position) {
+function initPlayerLocation() {
+  navigator.geolocation.getCurrentPosition(startingLocation, errorCallback, options);
+}
+
+function updatePlayerLocation(position) {
   coords.latitude = position.coords.latitude;
   coords.longitude = position.coords.longitude;
   player.getLocation(coords);
 
   modifyMarkerPosition(player);
   console.log(player.coordinates);
-  eatPellet();
+  eatPelletChance();
 }
 
-function initPlayerLocation() {
-  navigator.geolocation.getCurrentPosition(playerLocation, errorCallback, options);
-}
-
-function playerLocation(position) {
+function startingLocation(position) {
   coords.latitude = position.coords.latitude;
   coords.longitude = position.coords.longitude;
 
   player.getLocation(coords);
   console.log(player.coordinates);
-  addCustomMarker(player)
+  addCustomMarker(player);
 }
 
 function errorCallback() {
