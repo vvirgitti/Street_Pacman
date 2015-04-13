@@ -6,7 +6,7 @@ var Player = function() {
   this.tag = "player";
   this.icon = '../images/mini_Pacman.png';
   this.score = 0;
-  this.userId;
+  this.id;
   this.enemies = [];
 };
 

@@ -1,6 +1,6 @@
 var player = new Player();
-var pellet1 = new Pellet();
-var pellet2 = new Pellet();
+// var pellet1 = new Pellet();
+// var pellet2 = new Pellet();
 var pellets = [];
 
 function pelletLocator() {
@@ -9,7 +9,8 @@ function pelletLocator() {
 }
 
 $(document).ready(function() {
-  pelletLocator();
+  newPlayerInit();
+  // pelletLocator();
   initPlayerLocation();
   setInterval(queryGPStracker, 2000);
 });

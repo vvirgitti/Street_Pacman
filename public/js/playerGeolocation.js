@@ -16,31 +16,31 @@ function initPlayerLocation() {
 }
 
 function updatePlayerLocation(position) {
-  coords.latitude = position.coords.latitude;
-  coords.longitude = position.coords.longitude;
-  
-  player.getLocation(coords);
+  setPlayerCoords(position);
   modifyMarkerPosition(player);
   map.setCenter(coords.latitude, coords.longitude);
   
   eatPelletChance();
 
   console.log(player.coordinates);
-  playerMovement(socket, player);
+  playerMovement(player);
 }
 
 function startingLocation(position) {
-  coords.latitude = position.coords.latitude;
-  coords.longitude = position.coords.longitude;
-  
-  player.getLocation(coords);
+  setPlayerCoords(position);
   addCustomMarker(player);
 
   console.log(player.coordinates);
-  playerMovement();
+  playerMovement(player);
 }
 
 function errorCallback() {
   console.log("the geolocation function didn't load properly");
+}
+
+function setPlayerCoords(position) {
+  coords.latitude = position.coords.latitude;
+  coords.longitude = position.coords.longitude;
+  player.getLocation(coords);
 }
 
