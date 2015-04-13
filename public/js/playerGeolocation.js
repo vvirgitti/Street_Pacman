@@ -26,6 +26,7 @@ function updatePlayerLocation(position) {
   eatPelletChance();
 
   console.log(player.coordinates);
+  playerMovement(socket, player);
 }
 
 function startingLocation(position) {
@@ -36,8 +37,10 @@ function startingLocation(position) {
   addCustomMarker(player);
 
   console.log(player.coordinates);
+  playerMovement();
 }
 
 function errorCallback() {
   console.log("the geolocation function didn't load properly");
 }
+
