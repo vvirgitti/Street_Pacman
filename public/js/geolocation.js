@@ -21,6 +21,7 @@ function updatePlayerLocation(position) {
   player.getLocation(coords);
 
   modifyMarkerPosition(player);
+  map.setCenter(coords.latitude, coords.longitude);
   console.log(player.coordinates);
   eatPelletChance();
 }
