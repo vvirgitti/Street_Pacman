@@ -1,0 +1,84 @@
+html {
+  background-color: black;
+}
+
+.button {
+  background-color: black;
+  text-align: center;
+}
+
+.image {
+  background-color: black;
+  text-align: center;
+}
+
+.test {
+  position: relative;
+  top: 300px;
+  background-color: white;
+  text-align: center;
+  color: red;
+  height: 40px;
+  display: inline-block;
+  margin: 0 auto;
+  font-family: 'VT323', serif;
+  font-size: 200%;
+}
+
+h1, h4 {
+  text-align: center;
+  color: white;
+  background-color: black;
+  font-family: 'VT323', serif;
+  font-size: 200%;
+}
+
+.name {
+  position: relative;
+  left: 100px;
+  color: white;
+  background-color: black;
+  float: left;
+  font-family: 'VT323', serif;
+  font-size: 200%;
+}
+
+.pacman {
+  color: white;
+  background-color: black;
+  font-family: 'VT323', serif;
+  font-size: 200%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.character {
+  float: left;
+  width: 110px;
+  height: 110px;
+  margin: 15px;
+  position: relative;
+  padding: 30px;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.character:hover {
+  width: 150px;
+  height: 150px;
+}
+
+#map {
+  width: 1200px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin: 0px auto;
+}
