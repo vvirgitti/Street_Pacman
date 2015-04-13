@@ -9,11 +9,10 @@ var lon1 = -0.0721043;
 
 
 $(document).ready(function() {
-  geolocatePlayer();
-  setInterval(geolocatePlayer, 3000);
+  initPlayerLocation();
   setPelletPosition(pellet, lat, lon);
   setPelletPosition(pellet2, lat1, lon1);
-  setInterval(eatPellet, 5000);
+  setInterval(updatePlayerLocation, 2000);
 });
 
 function eatPellet() {
@@ -31,7 +30,7 @@ function eatPellet() {
 
 function matchPelletToMarker(pt) {
   map.markers.forEach(function(marker) {
-    if(marker.position.k.toFixed === pt.coordinates.lat.toFixed && marker.position.D.toFixed(6) === pt.coordinates.lng.toFixed(6)) {
+    if(marker.position.k.toFixed(6) === pt.coordinates.lat.toFixed(6) && marker.position.D.toFixed(6) === pt.coordinates.lng.toFixed(6)) {
       map.removeMarker(marker);
     };
   });
