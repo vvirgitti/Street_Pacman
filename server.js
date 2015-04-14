@@ -33,8 +33,8 @@ function start() {
 =================================== */
 
   io.on('connection', function(socket) {
-    console.log(socket.id)
     players.push(socket.id);
+    console.log(players);
     console.log('user ' + socket.id + ' connected');
 
     socket.on('player moves', function(player) {
@@ -49,14 +49,9 @@ function start() {
       players.splice(i, 1)
       console.log(players);
     });
-    console.log(players);
   });
 
 // ==================================
-}
-
-function addNewPlayer(player) {
-  players.push(player)
 }
 
 module.exports = server;

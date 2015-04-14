@@ -3,22 +3,19 @@ var coords = {
   longitude: undefined
 };
 
-var options = {
-  enableHighAccuracy: true
-};
-
 function queryGPStracker() {
+  var options = {
+    enableHighAccuracy: true
+  };
   navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
 }
 
 function updatePlayerLocation(position) {
   setPlayerCoords(position);
-  removeCustomMarker(player)
-  addCustomMarker(player);
   map.setCenter(coords.latitude, coords.longitude);
-
+  updateMarkerPosition(player);
   console.log(player.coordinates);
-  playerMovement(player);
+  broadcastPlayerMovement(player);
   console.log(map.markers);
 }
 
@@ -30,4 +27,9 @@ function setPlayerCoords(position) {
   coords.latitude = position.coords.latitude;
   coords.longitude = position.coords.longitude;
   player.getLocation(coords);
+}
+
+function updateMarkerPosition(player) {
+  removeCustomMarker(player);
+  addCustomMarker(player);
 }
