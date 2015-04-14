@@ -20,9 +20,9 @@
         <div class="font-effect-3d-float">
           <nav>
             <ul>
-              <div class="two columns"><li><a href="/">Home</a></li></div>
-              <div class="two columns"><li><a href="/choose">New Game</a></li></div>
-              <div class="two columns"><li><a href="/game">Start Game</a></li></div>
+              <div class="four columns"><li><a href="/">Home</a></li></div>
+              <div class="four columns"><li><a href="/choose">New Game</a></li></div>
+              <div class="four columns"><li><a href="/game">Start Game</a></li></div>
             </ul>
           </nav>
         </div>
@@ -34,19 +34,14 @@
     <div class="container">
       <div class="row">
         <div class="twelve columns"><h1 class='main_header'>Street<br>Pacman</h1></div>
-        <div class="four columns"><div class="pacman_logo"><img src="images/pacman_eating.gif"></div></div>
+        <div class="twelve columns"><img class="pacman_logo" src="images/pacman_eating.gif"></div>
       </div>
     </div>
   </div>
-    <br>
-    <button type="submit" value="New Game">New Game</button>
 
-  <br>
-  <br>
-  <!-- <div class="test">
-    <a href="/">Home</a>
-    <a href="/choose">New Game</a>
-  </div> -->
+    <form action="/choose" method="post">
+      <button type="submit" value="New Game">New Game </button>
+    </form>
 
   <footer id="page-footer"></footer>
 </body>
