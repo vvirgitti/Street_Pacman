@@ -37,39 +37,42 @@
     <div class="row">
       <div class="twelve columns">
         <h3>Pacman<h3>
-        <a href="/game"><img class="pacman" src="images/Pacman-player.jpg"></a>
+        <a href="/game"><img class="pacman" src="images/Pacman-player.jpg" id="Pacman"></a>
       </div>
     </div>
   </div>
 </div>
 
-  <div class="section monster title">
-    <div class="container">
-      <div class="row">
-        <div class="three columns"><h3>Shadow</h3></div>
-        <div class="three columns"><h3>Speedy</h3></div>
-        <div class="three columns"><h3>Bashful</h3></div>
-        <div class="three columns"><h3>Pokey</h3></div>
-      </div>
-    </div>
-  </div>
+<script>
+var player;
+$(document).ready(function(){
+  $('.pacman').on('click',function(){
+    player = $(this).attr('id') || '';
+    console.log(player);
+  });
+});
+</script>
 
   <div class="section monster">
     <div class="container">
       <div class="row">
-        <div class="three columns"><a href="/game"><img class="character" src="images/Shadow-player.jpg"></a></div>
-        <div class="three columns"><a href="/game"><img class="character" src="images/Speedy-player.jpg"></a></div>
-        <div class="three columns"><a href="/game"><img class="character" src="images/Bashful-player.jpg"></a></div>
-        <div class="three columns"><a href="/game"><img class="character" src="images/Pokey-player.jpg"></a></div>
+        <div class="three columns"><h3>Shadow</h3><a href="/game"><img class="character" src="images/Shadow-player.jpg" id="Shadow"></a></div>
+        <div class="three columns"><h3>Speedy</h3><a href="/game"><img class="character" src="images/Speedy-player.jpg" id="Speedy"></a></div>
+        <div class="three columns"><h3>Bashful</h3><a href="/game"><img class="character" src="images/Bashful-player.jpg" id="Bashful"></a></div>
+        <div class="three columns"><h3>Pokey</h3><a href="/game"><img class="character" src="images/Pokey-player.jpg" id="Pokey"></a></div>
       </div>
     </div>
   </div>
 
-<br>
-<br>
-<br>
-<br>
-
+<script>
+var player;
+$(document).ready(function(){
+  $('.character').on('click',function(){
+    player = $(this).attr('id') || '';
+    console.log(player);
+  });
+});
+</script>
   <footer id="page-footer"></footer>
 </body>
 </html>
