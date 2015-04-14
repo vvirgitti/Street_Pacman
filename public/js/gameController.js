@@ -10,7 +10,9 @@ function pelletLocator() {
 
 $(document).ready(function() {
   queryGPStracker();
-  // getStartingLocation();
+  setTimeout( function() {
+    map.setCenter(coords.latitude, coords.longitude)
+  }, 2000);
   // pelletLocator();
   setInterval(queryGPStracker, 2000);
 });

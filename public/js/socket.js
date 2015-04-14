@@ -1,13 +1,8 @@
 // this file contains Socket.io client functions
 var socket = io();
 
-socket.on('shake', function(data) {
-  if(contains(player.enemies, data) == false) {
-    player.enemies.push(data);
-  };
-});
-
 socket.on('new player location', function(data) {
+  checkForEnemyRedundancy(data);
   updateEnemyLocation(data);
 });
 
@@ -45,6 +40,12 @@ function broadcastPlayerMovement(player) {
 function newPlayerInit(player) {
   player.id = socket.id;
   socket.emit('hello world', { id: player.id, coordinates: player.coordinates });
+}
+
+function checkForEnemyRedundancy(data) {
+  if(contains(player.enemies, data) == false) {
+    player.enemies.push(data);
+  };
 }
 
 function contains(a, obj) {
