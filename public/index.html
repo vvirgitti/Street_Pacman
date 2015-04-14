@@ -4,30 +4,50 @@
   <meta charset="utf-8">
   <title> Street PacMan</title>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="skeleton.css">
   <link rel="stylesheet" type="text/css" href="app.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d-float' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Bangers&effect=neon|3d' rel='stylesheet' type='text/css'
 </head>
 <body>
 
-  <div class="image">
-    <img src="images/pacman_header.jpeg">
+  <header class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="font-effect-3d-float">
+          <nav>
+            <ul>
+              <div class="two columns"><li><a href="/">Home</a></li></div>
+              <div class="two columns"><li><a href="/choose">New Game</a></li></div>
+              <div class="two columns"><li><a href="/game">Start Game</a></li></div>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section hero">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns"><h1 class='main_header'>Street<br>Pacman</h1></div>
+        <div class="four columns"><div class="pacman_logo"><img src="images/pacman_eating.gif"></div></div>
+      </div>
+    </div>
   </div>
+    <br>
+    <button type="submit" value="New Game">New Game</button>
 
   <br>
   <br>
-  <div class="test">
+  <!-- <div class="test">
     <a href="/">Home</a>
     <a href="/choose">New Game</a>
-  </div>
+  </div> -->
 
-
-
-
-
-
-
-
-
+  <footer id="page-footer"></footer>
 </body>
 </html>
