@@ -33,29 +33,23 @@ function start() {
 =================================== */
 
   io.on('connection', function(socket) {
+    console.log(socket.id)
     players.push(socket.id);
     console.log('user ' + socket.id + ' connected');
 
     socket.on('player moves', function(player) {
-      console.log(player);
       socket.broadcast.emit('shake', { id: player.id, coordinates: player.coordinates });
       socket.broadcast.emit('new player location', { id: player.id, coordinates: player.coordinates });
     });
 
     socket.on('disconnect', function() {
-      socket.emit('player disconnected', { id: socket.id });
+      socket.broadcast.emit('player disconnected', { id: socket.id });
       console.log('user ' + socket.id + ' disconnected');
       var i = players.indexOf(socket.id);
-      delete players[i];
+      players.splice(i, 1)
+      console.log(players);
     });
-
-    // socket.on('player moves', function(player) {
-    //   socket.emit('new player location', { id: player.id, coordinates: player.coordinates });
-    //   console.log(player.id);
-    //   console.log(player.coordinates);
-    //   console.log('user has moved');
-    //   console.log(players);
-    // });
+    console.log(players);
   });
 
 // ==================================

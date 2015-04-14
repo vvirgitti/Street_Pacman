@@ -2,9 +2,9 @@
 var socket = io();
 
 socket.on('shake', function(data) {
-  console.log(data);
-  player.enemies.push(data);
-  enemyPosition(data);
+  if(contains(player.enemies, data) == false) {
+    player.enemies.push(data);
+  };
 });
 
 socket.on('new player location', function(data) {
@@ -14,7 +14,11 @@ socket.on('new player location', function(data) {
 socket.on('player disconnected', function(data) {
   player.enemies.forEach( function(enemy) {
     if(enemy.id == data.id ) {
-      player.enemies.pop(enemy);
+      var i = player.enemies.indexOf(enemy);
+      console.log(enemy);
+      console.log(player.enemies);
+      player.enemies.splice(i, 1);
+      console.log(player.enemies);
       removeCustomMarker(enemy);
     }
   });
@@ -23,10 +27,6 @@ socket.on('player disconnected', function(data) {
 function updateLocation(data) {
   player.enemies.forEach( function(enemy) {
     if(enemy.id == data.id) {
-      console.log("enemy id");
-      console.log(enemy.id);
-      console.log("data id");
-      console.log(data.id);
       enemy.coordinates = data.coordinates;
       removeCustomMarker(enemy);
       addCustomMarker(enemy);
@@ -50,6 +50,14 @@ function newPlayerInit(player) {
   socket.emit('hello world', { id: player.id, coordinates: player.coordinates });
 }
 
+function contains(a, obj) {
+  for (var i = 0; i < a.length; i++) {
+    if (a[i].id === obj.id) {
+      return true;
+    }
+  }
+  return false;
+}
 /////
 // SERVER
 // socket.on('clientMove', function(data){
