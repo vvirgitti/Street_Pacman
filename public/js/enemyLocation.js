@@ -1,9 +1,7 @@
-function enemyPosition() {
-  player.enemies.forEach( function(enemy) {
-    map.addMarker({
-      lat: enemy.coordinates.latitude,
-      lng: enemy.coordinates.longitude,
-      tag: enemy.id
-    });
+function enemyPosition(data) {
+  map.addMarker({
+    lat: data.coordinates.latitude,
+    lng: data.coordinates.longitude,
+    title: data.id
   });
 }

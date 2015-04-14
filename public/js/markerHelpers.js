@@ -11,14 +11,14 @@ function addCustomMarker(object) {
   map.addMarker({
     lat: object.coordinates.latitude,
     lng: object.coordinates.longitude,
-    title: object.tag,
+    title: object.id,
     icon: object.icon,
   });
 }
 
 function modifyMarkerPosition(object) {
   map.markers.forEach( function(marker) {
-    if(marker.tag === object.tag) {
+    if(marker.tag === object.id) {
       marker.position.k = object.coordinates.latitude
       marker.position.D = object.coordinates.longitude
     }

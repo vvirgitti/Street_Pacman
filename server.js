@@ -33,27 +33,27 @@ function start() {
 =================================== */
 
   io.on('connection', function(socket) {
-
+    players.push(socket.id);
+    console.log('user ' + socket.id + ' connected');
+    
     socket.on('hello world', function(data) {
-      players.push(data);
-      console.log('user connected');
-      players.forEach( function(data) {
-        socket.broadcast.emit('shake', { id: data.id, coordinates: data.coordinates });
-      });
+      console.log(data);
+      socket.broadcast.emit('shake', { id: data.id, coordinates: data.coordinates });
     });
 
-    io.on('disconnection', function(data) {
-      players.forEach( function(player) {
-        if(player.id === data.id) {
-          players.pop(player)
-          console.log('player disconnected');
-        };
-      });
-    })
+    socket.on('disconnect', function(user) {
+      socket.broadcast.emit('player disconnected', { id: socket.id });
+      console.log('user ' + socket.id + ' disconnected');
+      var i = players.indexOf(user);
+      delete players[i];
+    });
 
     socket.on('player moves', function(data) {
-      socket.broadcast.emit('new player location', { id: data.id, coordinates: data.coordinates })
+      socket.broadcast.emit('new player location', { id: data.id, coordinates: data.coordinates });
+      console.log(data.id);
+      console.log(data.coordinates);
       console.log('user has moved');
+      console.log(players);
     });
   }); 
 

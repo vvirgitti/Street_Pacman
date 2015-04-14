@@ -1,26 +1,31 @@
 // this file contains Socket.io client functions
 var socket = io.connect('http://localhost:3000');
 
+function connectToServer() {
+  socket.on('connect', function(data) {
+    // console.log(data);
+    setTimeout(newPlayerInit(player), 5000);
+  });
+}
+
 socket.on('shake', function(data) {
-  player.enemies.push(data);
   console.log(data);
-  updateLocation(data);
-  enemyPosition();
+  player.enemies.push(data);
+  enemyPosition(data);
 });
 
 socket.on('new player location', function(data) {
   updateLocation(data);
-  enemyPosition();
 });
 
-socket.on('disconnection', function(data) {
+socket.on('player disconnected', function(data) {
   player.enemies.forEach( function(enemy) {
-    if(enemy.id === data.id) {
+    if(enemy.id === data.id ) {
       player.enemies.pop(enemy);
+      removeCustomMarker(enemy);
     }
   });
 });
-
 
 function updateLocation(data) {
   player.enemies.forEach( function(enemy) {
@@ -34,7 +39,7 @@ function updateLocation(data) {
 
 function playerMovement(player) {
   socket.emit('player moves', { 
-    id: 'pacman', 
+    id: socket.id, 
     coordinates: { 
       latitude: player.coordinates.latitude, 
       longitude: player.coordinates.longitude 
@@ -42,8 +47,9 @@ function playerMovement(player) {
   });
 }
 
-function newPlayerInit() {
-  socket.emit('hello world', { id: player.id, coordinates: player.coordinates } )
+function newPlayerInit(player) {
+  player.id = socket.id;
+  socket.emit('hello world', { id: player.id, coordinates: player.coordinates });
 }
 
 /////

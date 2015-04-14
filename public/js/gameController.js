@@ -9,7 +9,7 @@ function pelletLocator() {
 }
 
 $(document).ready(function() {
-  newPlayerInit();
+  connectToServer();
   // pelletLocator();
   initPlayerLocation();
   setInterval(queryGPStracker, 2000);
