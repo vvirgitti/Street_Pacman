@@ -1,7 +1,7 @@
 // tags must be strings
 function removeCustomMarker(object) {
   map.markers.forEach( function(marker) {
-    if(marker.title === object.tag) {
+    if(marker.title == object.id) {
       map.removeMarker(marker);
     }
   });
@@ -18,7 +18,7 @@ function addCustomMarker(object) {
 
 function modifyMarkerPosition(object) {
   map.markers.forEach( function(marker) {
-    if(marker.tag === object.id) {
+    if(marker.title == object.id) {
       marker.position.k = object.coordinates.latitude
       marker.position.D = object.coordinates.longitude
     }

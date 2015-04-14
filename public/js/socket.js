@@ -1,13 +1,6 @@
 // this file contains Socket.io client functions
 var socket = io();
 
-function connectToServer() {
-  socket.on('connect', function(data) {
-    // console.log(data);
-    setTimeout(newPlayerInit(player), 5000);
-  });
-}
-
 socket.on('shake', function(data) {
   console.log(data);
   player.enemies.push(data);
@@ -20,7 +13,7 @@ socket.on('new player location', function(data) {
 
 socket.on('player disconnected', function(data) {
   player.enemies.forEach( function(enemy) {
-    if(enemy.id === data.id ) {
+    if(enemy.id == data.id ) {
       player.enemies.pop(enemy);
       removeCustomMarker(enemy);
     }
@@ -29,9 +22,12 @@ socket.on('player disconnected', function(data) {
 
 function updateLocation(data) {
   player.enemies.forEach( function(enemy) {
-    if(enemy.id === data.id) {
+    if(enemy.id == data.id) {
+      console.log(enemy.id);
+      console.log(data.id);
       enemy.coordinates = data.coordinates;
-      modifyMarkerPosition(enemy);
+      removeCustomMarker(enemy);
+      addCustomMarker(enemy);
     }
   });
   console.log(player.enemies);

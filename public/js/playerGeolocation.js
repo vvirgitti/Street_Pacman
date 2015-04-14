@@ -7,31 +7,32 @@ var options = {
   enableHighAccuracy: true
 };
 
-function queryGPStracker() {
-  navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
-}
-
-function initPlayerLocation() {
+function getStartingLocation() {
   navigator.geolocation.getCurrentPosition(startingLocation, errorCallback, options);
 }
 
-function updatePlayerLocation(position) {
-  setPlayerCoords(position);
-  modifyMarkerPosition(player);
-  map.setCenter(coords.latitude, coords.longitude);
-  
-  eatPelletChance();
-
-  console.log(player.coordinates);
-  playerMovement(player);
+function queryGPStracker() {
+  navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
 }
 
 function startingLocation(position) {
   setPlayerCoords(position);
   addCustomMarker(player);
+  map.setCenter(coords.latitude, coords.longitude);
+  newPlayerInit(player);
+  
+  console.log(player.coordinates);
+}
+
+function updatePlayerLocation(position) {
+  setPlayerCoords(position);
+  removeCustomMarker(player)
+  addCustomMarker(player);
+  map.setCenter(coords.latitude, coords.longitude);
 
   console.log(player.coordinates);
   playerMovement(player);
+  console.log(map.markers);
 }
 
 function errorCallback() {

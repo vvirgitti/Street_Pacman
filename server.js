@@ -36,25 +36,25 @@ function start() {
     players.push(socket.id);
     console.log('user ' + socket.id + ' connected');
     
-    socket.on('hello world', function(data) {
-      console.log(data);
-      socket.broadcast.emit('shake', { id: data.id, coordinates: data.coordinates });
+    socket.on('hello world', function(player) {
+      console.log(player);
+      socket.broadcast.emit('shake', { id: player.id, coordinates: player.coordinates });
     });
-
-    socket.on('disconnect', function(user) {
-      socket.broadcast.emit('player disconnected', { id: socket.id });
+    
+    socket.on('disconnect', function() {
+      socket.emit('player disconnected', { id: socket.id });
       console.log('user ' + socket.id + ' disconnected');
-      var i = players.indexOf(user);
+      var i = players.indexOf(socket.id);
       delete players[i];
     });
 
-    socket.on('player moves', function(data) {
-      socket.broadcast.emit('new player location', { id: data.id, coordinates: data.coordinates });
-      console.log(data.id);
-      console.log(data.coordinates);
-      console.log('user has moved');
-      console.log(players);
-    });
+    // socket.on('player moves', function(player) {
+    //   socket.emit('new player location', { id: player.id, coordinates: player.coordinates });
+    //   console.log(player.id);
+    //   console.log(player.coordinates);
+    //   console.log('user has moved');
+    //   console.log(players);
+    // });
   }); 
 
 // ==================================
