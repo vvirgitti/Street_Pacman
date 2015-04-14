@@ -23,7 +23,9 @@ socket.on('player disconnected', function(data) {
 function updateLocation(data) {
   player.enemies.forEach( function(enemy) {
     if(enemy.id == data.id) {
+      console.log("enemy id");
       console.log(enemy.id);
+      console.log("data id");
       console.log(data.id);
       enemy.coordinates = data.coordinates;
       removeCustomMarker(enemy);
@@ -34,11 +36,11 @@ function updateLocation(data) {
 }
 
 function playerMovement(player) {
-  socket.emit('player moves', { 
-    id: socket.id, 
-    coordinates: { 
-      latitude: player.coordinates.latitude, 
-      longitude: player.coordinates.longitude 
+  socket.emit('player moves', {
+    id: socket.id,
+    coordinates: {
+      latitude: player.coordinates.latitude,
+      longitude: player.coordinates.longitude
     }
   });
 }

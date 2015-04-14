@@ -35,12 +35,13 @@ function start() {
   io.on('connection', function(socket) {
     players.push(socket.id);
     console.log('user ' + socket.id + ' connected');
-    
-    socket.on('hello world', function(player) {
+
+    socket.on('player moves', function(player) {
       console.log(player);
       socket.broadcast.emit('shake', { id: player.id, coordinates: player.coordinates });
+      socket.broadcast.emit('new player location', { id: player.id, coordinates: player.coordinates });
     });
-    
+
     socket.on('disconnect', function() {
       socket.emit('player disconnected', { id: socket.id });
       console.log('user ' + socket.id + ' disconnected');
@@ -55,7 +56,7 @@ function start() {
     //   console.log('user has moved');
     //   console.log(players);
     // });
-  }); 
+  });
 
 // ==================================
 }

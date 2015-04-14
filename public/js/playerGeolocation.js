@@ -19,8 +19,8 @@ function startingLocation(position) {
   setPlayerCoords(position);
   addCustomMarker(player);
   map.setCenter(coords.latitude, coords.longitude);
-  newPlayerInit(player);
-  
+  // newPlayerInit(player);
+
   console.log(player.coordinates);
 }
 
@@ -44,4 +44,3 @@ function setPlayerCoords(position) {
   coords.longitude = position.coords.longitude;
   player.getLocation(coords);
 }
-
