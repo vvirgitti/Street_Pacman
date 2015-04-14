@@ -9,8 +9,8 @@ function pelletLocator() {
 }
 
 $(document).ready(function() {
-  getStartingLocation();
+  queryGPStracker();
+  // getStartingLocation();
   // pelletLocator();
-  // initPlayerLocation();
   setInterval(queryGPStracker, 2000);
 });

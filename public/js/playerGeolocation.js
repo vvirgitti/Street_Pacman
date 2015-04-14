@@ -7,20 +7,8 @@ var options = {
   enableHighAccuracy: true
 };
 
-function getStartingLocation() {
-  navigator.geolocation.getCurrentPosition(startingLocation, errorCallback, options);
-}
-
 function queryGPStracker() {
   navigator.geolocation.getCurrentPosition(updatePlayerLocation, errorCallback, options);
-}
-
-function startingLocation(position) {
-  setPlayerCoords(position);
-  addCustomMarker(player);
-  map.setCenter(coords.latitude, coords.longitude);
-
-  console.log(player.coordinates);
 }
 
 function updatePlayerLocation(position) {
