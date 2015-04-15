@@ -39,9 +39,8 @@
   <div id="pacman_lights"><img src="images/pacman_lights.gif"></div>
 
   <script type="text/javascript">
-    $.get('/choose', {icon:player.icon}).done(function(data){
-      player.icon = data.icon;
-      console.log(player.icon);
+    $.get('/game', {icon : player.icon}, function(data){
+      alert("working");
     });
   </script>
 

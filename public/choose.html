@@ -63,8 +63,8 @@ $(document).ready(function(){
   $('.character').on('click',function(){
     playerIcon = $(this).attr('id');
     getIcon(playerIcon);
+    $.post('/choose', { icon: player.icon } );
   });
-  $.post('/choose', {icon:player.icon});
 });
 </script>
 
