@@ -1,27 +1,31 @@
 var player = new Player();
 
   function getIcon(icon) {
-    var weakStatus = 'weak'
-    var invincibleStatus = 'invincible'
+    var weak = 'weak'
+    var invincible = 'invincible'
 
     if (icon == 'Pacman'){
       player.icon = '/images/mini_Pacman.png';
-      player.status = weakStatus;
     } else if (icon == 'Shadow'){
       player.icon = '/images/shadow-white.png';
-      player.status = invincibleStatus;
     } else if (icon == 'Speedy'){
       player.icon = '/images/Speedy-white.png';
-      player.status = invincibleStatus;
     } else if (icon == 'Bashful'){
       player.icon = '/images/Bashful-white.png';
-      player.status = invincibleStatus;
     } else {
       player.icon = '/images/pokey-white.png';
-      player.status = invincibleStatus;
     }
+
+    function initStatus(icon) {
+      if(icon == 'Pacman') {
+        player.status = weak;
+      } else {
+        player.status = invincible;
+      }
+    }
+
+    initStatus(icon)
     console.log(player.icon)
-    debugger;
   }
 
   function supports_html5_storage() {
