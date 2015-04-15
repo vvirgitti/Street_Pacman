@@ -97,3 +97,10 @@ function contains(array, obj) {
   }
   return false;
 }
+
+
+function hideIcon() {
+  socket.on('hide icon start', function(name){
+    hide(name);
+  });
+}

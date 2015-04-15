@@ -58,17 +58,15 @@
   </div>
 
 <script>
-// var playerIcon;
 $(document).ready(function(){
   $('.character').on('click',function(){
     playerIcon = $(this).attr('id');
     var chooseIcon = JSON.stringify(playerIcon);
     localStorage.setItem('data', chooseIcon);
+    hide(playerIcon);
   });
 });
 </script>
-
-
 
 
 

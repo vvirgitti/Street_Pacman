@@ -34,10 +34,6 @@ function getIcon(icon) {
   console.log(player.icon)
 }
 
-function supports_html5_storage() {
-  try {
-    return 'localStorage' in window && window['localStorage'] !== null;
-  } catch (e) {
-    return false;
+  function hide(name){
+    document.getElementById(name).style.display='none';
   }
-}

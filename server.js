@@ -62,7 +62,13 @@ function start() {
     socket.on('1337', function(data) {
       console.log(data);
     });
+
+    socket.on('hide icon start game', function(data){
+      socket.broadcast.emit('hide icon start');
+    });
+
   });
+
 
   function setConnectionLimit(socket) {
     if(players.length < 5) {
