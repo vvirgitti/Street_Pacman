@@ -31,7 +31,6 @@ module.exports=function(app) {
   });
 
   app.post('/choose', function(req, res){
-    // console.log(req.body);
     res.render('choose.html')
   });
 

@@ -12,6 +12,7 @@
   <script src="js/markerHelpers.js"></script>
   <script src="js/playerGeolocation.js"></script>
   <script src="js/gameLogic.js"></script>
+  <script src="js/characterController.js"></script>
   <script src="js/gameController.js"></script>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/skeleton.css">
@@ -36,12 +37,6 @@
   </header>
 
   <div id="pacman_lights"><img src="images/pacman_lights.gif"></div>
-
-  <script type="text/javascript">
-    $.get('/game', {icon : player.icon}, function(data){
-      alert("working");
-    });
-  </script>
 
   <div class="section map">
     <div class="container">

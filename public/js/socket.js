@@ -30,6 +30,7 @@ function updateEnemyLocation(data) {
     var enemy = player.enemies[i]
     if(enemy.id == data.id) {
       enemy.coordinates = data.coordinates;
+      enemy.icon = data.icon;
       updateMarkerPosition(enemy);
       console.log(enemy);
     }
@@ -45,7 +46,8 @@ function broadcastPlayerMovement(player) {
     coordinates: {
       latitude: player.coordinates.latitude,
       longitude: player.coordinates.longitude
-    }
+    },
+    icon: player.icon
   });
 }
 

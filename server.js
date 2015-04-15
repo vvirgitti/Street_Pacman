@@ -43,7 +43,7 @@ function start() {
     console.log('user ' + socket.id + ' connected');
 
     socket.on('player moves', function(player) {
-      socket.broadcast.emit('new player location', { id: player.id, coordinates: player.coordinates });
+      socket.broadcast.emit('new player location', { id: player.id, coordinates: player.coordinates, icon: player.icon });
     });
 
     socket.on('disconnect', function() {

@@ -1,14 +1,13 @@
 var player = new Player();
-var playerIcon;
 
-  function getIcon(playerIcon) {
-    if (playerIcon == 'Pacman'){
+  function getIcon(icon) {
+    if (icon == 'Pacman'){
       player.icon = '/images/mini_Pacman.png';
-    } else if (playerIcon == 'Shadow'){
+    } else if (icon == 'Shadow'){
       player.icon = '/images/shadow-white.png';
-    } else if (playerIcon == 'Speedy'){
+    } else if (icon == 'Speedy'){
       player.icon = '/images/Speedy-white.png';
-    } else if (playerIcon == 'Bashful'){
+    } else if (icon == 'Bashful'){
       player.icon = '/images/Bashful-white.png';
     } else {
       player.icon = '/images/pokey-white.png';

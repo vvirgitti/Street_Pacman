@@ -49,7 +49,7 @@
   <div class="section monster">
     <div class="container">
       <div class="row">
-        <div class="three columns"><h3>Shadow</h3><a href='#'><img class="character" src="images/Shadow-player.jpg" id="Shadow"></a></div>
+        <div class="three columns"><h3>Shadow</h3><a href='/game'><img class="character" src="images/Shadow-player.jpg" id="Shadow"></a></div>
         <div class="three columns"><h3>Speedy</h3><a href='/game'><img class="character" src="images/Speedy-player.jpg" id="Speedy"></a></div>
         <div class="three columns"><h3>Bashful</h3><a href="/game"><img class="character" src="images/Bashful-player.jpg" id="Bashful"></a></div>
         <div class="three columns"><h3>Pokey</h3><a href="/game"><img class="character" src="images/Pokey-player.jpg" id="Pokey"></a></div>
@@ -62,8 +62,8 @@
 $(document).ready(function(){
   $('.character').on('click',function(){
     playerIcon = $(this).attr('id');
-    getIcon(playerIcon);
-    $.post('/choose', { icon: player.icon } );
+    var chooseIcon = JSON.stringify(playerIcon);
+    localStorage.setItem('data', chooseIcon);
   });
 });
 </script>
