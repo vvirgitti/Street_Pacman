@@ -16,11 +16,7 @@ function addCustomMarker(object) {
   });
 }
 
-function modifyMarkerPosition(object) {
-  map.markers.forEach( function(marker) {
-    if(marker.title == object.id) {
-      marker.position.k = object.coordinates.latitude
-      marker.position.D = object.coordinates.longitude
-    }
-  });
+function updateMarkerPosition(player) {
+  removeCustomMarker(player);
+  addCustomMarker(player);
 }

@@ -27,8 +27,3 @@ function setPlayerCoords(position) {
   coords.longitude = position.coords.longitude;
   player.getLocation(coords);
 }
-
-function updateMarkerPosition(player) {
-  removeCustomMarker(player);
-  addCustomMarker(player);
-}

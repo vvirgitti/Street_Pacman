@@ -1,10 +1,15 @@
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
+
 var throng = require('throng');
 var port = process.env.PORT || 3000;
 var WORKERS = process.env.WEB_CONCURRENCY || 1;
+
+var _ = require('lodash');
+
 var io = require('socket.io')(server);
+
 var players = [];
 var coords = {
   latitude: undefined,
@@ -44,8 +49,7 @@ function start() {
     socket.on('disconnect', function() {
       socket.broadcast.emit('player disconnected', { id: socket.id });
       console.log('user ' + socket.id + ' disconnected');
-      var i = players.indexOf(socket.id);
-      players.splice(i, 1)
+      _.pull(players, socket.id);
       console.log(players);
     });
   });

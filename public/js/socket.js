@@ -7,21 +7,24 @@ socket.on('new player location', function(data) {
 });
 
 socket.on('player disconnected', function(data) {
-  player.enemies.forEach( function(enemy) {
+  removeEnemy(data);
+});
+
+function removeEnemy(data) {
+  _.forEach(player.enemies, function(enemy) {
     if(enemy.id == data.id ) {
-      var i = player.enemies.indexOf(enemy);
-      player.enemies.splice(i, 1);
+      _.pull(player.enemies, enemy);
+      console.log(enemy);
       removeCustomMarker(enemy);
     }
   });
-});
+}
 
 function updateEnemyLocation(data) {
-  player.enemies.forEach( function(enemy) {
+  _.forEach(player.enemies, function(enemy) {
     if(enemy.id == data.id) {
       enemy.coordinates = data.coordinates;
-      removeCustomMarker(enemy);
-      addCustomMarker(enemy);
+      updateMarkerPosition(enemy);
     }
   });
   console.log(player.enemies);
@@ -37,20 +40,16 @@ function broadcastPlayerMovement(player) {
   });
 }
 
-function newPlayerInit(player) {
-  player.id = socket.id;
-  socket.emit('hello world', { id: player.id, coordinates: player.coordinates });
-}
-
 function checkForEnemyRedundancy(data) {
   if(contains(player.enemies, data) == false) {
     player.enemies.push(data);
   };
 }
 
-function contains(a, obj) {
-  for (var i = 0; i < a.length; i++) {
-    if (a[i].id === obj.id) {
+function contains(array, obj) {
+  var i = array.length;
+  while (i--) {
+    if (array[i].id === obj.id) {
       return true;
     }
   }

@@ -13,6 +13,5 @@ $(document).ready(function() {
   setTimeout( function() {
     map.setCenter(coords.latitude, coords.longitude)
   }, 2000);
-  // pelletLocator();
-  setInterval(queryGPStracker, 2000);
+  setInterval(queryGPStracker, 1000);
 });
