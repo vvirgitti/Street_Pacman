@@ -3,6 +3,7 @@ var socket = io();
 
 socket.on('new player location', function(data) {
   checkForEnemyRedundancy(data);
+  checkForUndefId();
   updateEnemyLocation(data);
 });
 
@@ -42,6 +43,15 @@ function broadcastPlayerMovement(player) {
       longitude: player.coordinates.longitude
     }
   });
+}
+
+function checkForUndefId() {
+  for(i = 0; i < player.enemies.length; i++) {
+    var enemy = player.enemies[i];
+    if(enemy.id == undefined) {
+      player.enemies.splice(i, 1);
+    }
+  }
 }
 
 function checkForEnemyRedundancy(data) {
