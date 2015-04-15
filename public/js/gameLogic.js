@@ -16,7 +16,7 @@ function eatPelletChance() {
   for(i = 0; i < pellets.length; i++) {
     var pellet = pellets[i]
     calculateDistance(pellet)
-    if(dist < 200) {
+    if(dist < 1) {
       pellets.pop(pellet);
       matchPelletToMarker(pellet);
       updateScore();
