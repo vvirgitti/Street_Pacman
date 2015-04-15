@@ -14,6 +14,7 @@ function updatePlayerLocation(position) {
   setPlayerCoords(position);
   updateMarkerPosition(player);
   broadcastPlayerMovement(player);
+  eatPelletChance();
 
   map.setCenter(coords.latitude, coords.longitude)
   console.log(player.coordinates);

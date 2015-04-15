@@ -38,7 +38,7 @@ function start() {
 =================================== */
 
   io.on('connection', function(socket) {
-    players.push(socket.id);
+    setConnectionLimit(socket);
     console.log(players);
     console.log('user ' + socket.id + ' connected');
 
@@ -54,6 +54,15 @@ function start() {
       console.log(players);
     });
   });
+
+  function setConnectionLimit(socket) {
+    if(players.length < 5) {
+      players.push(socket.id);
+    } else {
+      io.to(socket.id).emit('server full', { answer: 'server is full' })
+      console.log('server full');
+    }
+  }
 
 // ==================================
 }

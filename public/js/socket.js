@@ -1,6 +1,10 @@
 // this file contains Socket.io client functions
 var socket = io();
 
+socket.on('server full', function(data) {
+  console.log(data.answer);
+});
+
 function listenForEnemyLocation() {
   socket.on('new player location', function(data) {
     checkForEnemyRedundancy(data);

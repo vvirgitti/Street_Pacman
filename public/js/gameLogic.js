@@ -16,7 +16,7 @@ function eatPelletChance() {
   for(i = 0; i < pellets.length; i++) {
     var pellet = pellets[i]
     calculateDistance(pellet)
-    if(dist < 2) {
+    if(dist < 200) {
       pellets.pop(pellet);
       matchPelletToMarker(pellet);
       updateScore();
@@ -28,7 +28,7 @@ function eatPelletChance() {
 function matchPelletToMarker(pellet) {
   for(i = 0; i < map.markers.length; i++) {
     var marker = map.markers[i]
-    if(marker.position.k.toFixed(6) === pellet.coordinates.lat.toFixed(6) && marker.position.D.toFixed(6) === pellet.coordinates.lng.toFixed(6)) {
+    if(marker.position.k.toFixed(6) === pellet.coordinates.latitude.toFixed(6) && marker.position.D.toFixed(6) === pellet.coordinates.longitude.toFixed(6)) {
       map.removeMarker(marker);
     }
   }
