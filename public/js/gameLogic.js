@@ -13,23 +13,25 @@ function setPelletPosition(pellet, lat, lon) {
 }
 
 function eatPelletChance() {
-  pellets.forEach( function(pellet) {
+  for(i = 0; i < pellets.length; i++) {
+    var pellet = pellets[i]
     calculateDistance(pellet)
     if(dist < 2) {
       pellets.pop(pellet);
       matchPelletToMarker(pellet);
       updateScore();
-    };
-  });
-  console.log(map.markers);
+    }
+    console.log(map.markers);
+  }
 }
 
 function matchPelletToMarker(pellet) {
-  map.markers.forEach(function(marker) {
+  for(i = 0; i < map.markers.length; i++) {
+    var marker = map.markers[i]
     if(marker.position.k.toFixed(6) === pellet.coordinates.lat.toFixed(6) && marker.position.D.toFixed(6) === pellet.coordinates.lng.toFixed(6)) {
       map.removeMarker(marker);
-    };
-  });
+    }
+  }
 }
 
 function updateScore() {

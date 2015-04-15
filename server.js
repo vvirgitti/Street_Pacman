@@ -6,8 +6,6 @@ var throng = require('throng');
 var port = process.env.PORT || 3000;
 var WORKERS = process.env.WEB_CONCURRENCY || 1;
 
-var _ = require('lodash');
-
 var io = require('socket.io')(server);
 
 var players = [];
@@ -49,7 +47,8 @@ function start() {
     socket.on('disconnect', function() {
       socket.broadcast.emit('player disconnected', { id: socket.id });
       console.log('user ' + socket.id + ' disconnected');
-      _.pull(players, socket.id);
+      var i = players.indexOf(socket.id);
+      players.splice(i, 1);
       console.log(players);
     });
   });

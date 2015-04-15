@@ -11,22 +11,23 @@ socket.on('player disconnected', function(data) {
 });
 
 function removeEnemy(data) {
-  _.forEach(player.enemies, function(enemy) {
-    if(enemy.id == data.id ) {
-      _.pull(player.enemies, enemy);
-      console.log(enemy);
+  for(i = 0; i < player.enemies.length; i++) {
+    var enemy = player.enemies[i] 
+    if(enemy.id == data.id) {
+      player.enemies.splice(i, 1);
       removeCustomMarker(enemy);
     }
-  });
+  }
 }
 
 function updateEnemyLocation(data) {
-  _.forEach(player.enemies, function(enemy) {
+  for(i = 0; i < player.enemies.length; i++) {
+    var enemy = player.enemies[i] 
     if(enemy.id == data.id) {
       enemy.coordinates = data.coordinates;
       updateMarkerPosition(enemy);
     }
-  });
+  }
   console.log(player.enemies);
 }
 

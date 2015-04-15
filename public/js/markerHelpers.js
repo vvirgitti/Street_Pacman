@@ -1,10 +1,11 @@
 // tags must be strings
 function removeCustomMarker(object) {
-  map.markers.forEach( function(marker) {
+  for(i = 0; i < map.markers.length; i++) {
+    var marker = map.markers[i]
     if(marker.title == object.id) {
       map.removeMarker(marker);
     }
-  });
+  }
 }
 
 function addCustomMarker(object) {
