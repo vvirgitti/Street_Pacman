@@ -21,6 +21,7 @@ function eatPelletChance() {
         pellets.pop(pellet);
         matchPelletToMarker(pellet);
       }
+      godMode();
       console.log(map.markers);
     }
   }

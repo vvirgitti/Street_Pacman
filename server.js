@@ -57,6 +57,10 @@ function start() {
     socket.on('pwned', function(data) {
       console.log(data);
     });
+
+    socket.on('1337', function(data) {
+      console.log(data);
+    });
   });
 
   function setConnectionLimit(socket) {

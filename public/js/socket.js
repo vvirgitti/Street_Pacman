@@ -56,7 +56,11 @@ function broadcastPlayerMovement(player) {
 }
 
 function pwnMsg() {
-  socket.emit('pwned', 'pwned')
+  socket.emit('pwned', 'pwned');
+}
+
+function godMode() {
+  socket.emit('1337', '1337');
 }
 
 function checkForUndefId() {
