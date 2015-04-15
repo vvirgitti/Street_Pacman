@@ -53,6 +53,10 @@ function start() {
       players.splice(i, 1);
       console.log(players);
     });
+
+    socket.on('pwned', function(data) {
+      console.log(data);
+    });
   });
 
   function setConnectionLimit(socket) {

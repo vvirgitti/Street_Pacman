@@ -1,8 +1,8 @@
 var dist;
 
-function calculateDistance(pellet) {
+function calculateDistance(obj) {
   var from = new google.maps.LatLng(player.coordinates.latitude, player.coordinates.longitude);
-  var to = new google.maps.LatLng(pellet.coordinates.latitude, pellet.coordinates.longitude);
+  var to = new google.maps.LatLng(obj.coordinates.latitude, obj.coordinates.longitude);
   dist = google.maps.geometry.spherical.computeDistanceBetween(from, to).toFixed(2);
 }
 
@@ -13,15 +13,16 @@ function setPelletPosition(pellet, lat, lon) {
 }
 
 function eatPelletChance() {
-  for(i = 0; i < pellets.length; i++) {
+  if(player.tag == "Pacman") {
+    for(i = 0; i < pellets.length; i++) {
     var pellet = pellets[i]
     calculateDistance(pellet)
-    if(dist < 200) {
-      pellets.pop(pellet);
-      matchPelletToMarker(pellet);
-      updateScore();
+      if(dist < 2) {
+        pellets.pop(pellet);
+        matchPelletToMarker(pellet);
+      }
+      console.log(map.markers);
     }
-    console.log(map.markers);
   }
 }
 
@@ -34,9 +35,24 @@ function matchPelletToMarker(pellet) {
   }
 }
 
-function updateScore() {
-  player.score += 10;
-  $('#score').text( function() {
-    return "Score: " + player.score
-  });
+function matchEnemyToMarker(enemy) {
+  for(i = 0; i < map.markers.length; i++) {
+    var marker = map.markers[i]
+    if(marker.title == enemy.id) {
+      map.removeMarker(marker);
+      pwnMsg();
+    }
+  }
+}
+
+function eatsWeak(player) {
+  if(player.status == 'invincible') {
+    for(i = 0; i < player.enemies.length; i++ ) {
+      var enemy = player.enemies[i]
+      calculateDistance(enemy);
+      if (dist < 2) {
+        matchEnemyToMarker(enemy);
+      }
+    }
+  }
 }

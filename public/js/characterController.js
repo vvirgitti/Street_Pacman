@@ -1,5 +1,10 @@
 var player = new Player();
 
+  function setIcon() {
+    var icon = JSON.parse(localStorage.getItem('data'));
+    getIcon(icon);
+  }
+
   function getIcon(icon) {
     var weak = 'weak'
     var invincible = 'invincible'
@@ -18,8 +23,10 @@ var player = new Player();
 
     function initStatus(icon) {
       if(icon == 'Pacman') {
+        player.tag = 'Pacman'
         player.status = weak;
       } else {
+        player.tag = 'Ghost'
         player.status = invincible;
       }
     }

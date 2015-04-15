@@ -55,6 +55,10 @@ function broadcastPlayerMovement(player) {
   });
 }
 
+function pwnMsg() {
+  socket.emit('pwned', 'pwned')
+}
+
 function checkForUndefId() {
   for(i = 0; i < player.enemies.length; i++) {
     var enemy = player.enemies[i];

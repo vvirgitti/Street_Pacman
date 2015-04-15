@@ -3,10 +3,8 @@ var pellets = [];
 
 var megaPellet1 = new Pellet();
 
-
 $(document).ready(function() {
-  var icon = JSON.parse(localStorage.getItem('data'));
-  getIcon(icon);
+  setIcon();
   listenForEnemyLocation();
   listenForEnemyEscape();
   setPelletPosition(megaPellet1, 51.517900, -0.073658);

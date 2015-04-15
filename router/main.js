@@ -18,7 +18,6 @@ module.exports=function(app) {
   });
 
   app.get('/game', function(req, res){
-    console.log(req.body);
     res.render('game.html')
   });
 
