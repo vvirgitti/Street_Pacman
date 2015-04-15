@@ -18,30 +18,46 @@
   <link rel="stylesheet" type="text/css" href="skeleton.css">
   <link rel="stylesheet" type="text/css" href="app.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d-float' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Bangers&effect=neon|3d' rel='stylesheet' type='text/css'
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d|neon|fire' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=outline">
+  <link href='http://fonts.googleapis.com/css?family=Lobster|Luckiest+Guy' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 
-  <header class="page-header">
-        <div class="font-effect-3d-float">
-          <nav>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/choose">New Game</a></li>
-              <li><a href="/game">Start Game</a></li>
-            </ul>
-          </nav>
-    </div>
+  <div class="hover-space">
+  <header>
+     <!-- <div class="logo">Tomasso-Guido-Vanessa-Diego</div> -->
+    <nav>
+
+      <ul>
+        <li><a href="/index" class="font-effect-outline">Home</a></li>
+        <li><a href="/choose" class="font-effect-outline">New-Game</a></li>
+        <li><a href="/dream-team" class="font-effect-outline">Dream-Team</a></li>
+        <li><a href="http://www.makersacademy.com" target="_blank" class="font-effect-outline">Makers-Academy</a></li>        
+      </ul>
+    </nav>
   </header>
+</div>
 
-  <div id="pacman_lights"><img src="images/pacman_lights.gif"></div>
-
-  <div class="section map">
+  <!-- <div id="pacman_lights"><img src="images/pacman_lights.gif"></div> -->
+  <div class="section hero twelve columns">
     <div class="container">
       <div class="row">
-        <div class="twelve columns">
+        <h1>Game Starts!</h1></div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="two columns timer">
+      <h2>Timer <br><br> 5:00</h2>
+    </div>
+
+    <div class="eight columns">
+      <div class="section map">
           <div id="map"></div>
           <div id="score"></div>
             <script>
@@ -53,17 +69,29 @@
               map.setCenter(lat, lon);
               map.setZoom(20);
             </script>
-          </div>
-        </div>
       </div>
     </div>
+
+    <div class="two columns instructions">
+      <h3>This are the game instructions</h3>
+      <p>the game consists of Pacman getting the pebbles in order to change
+        his status and being able to eat the ghosts!</p>
+    </div>
+
+  </div>
+</div>
+
+<img class="game_picture" src="images/pacman_lights.gif">
 
   <!-- <div class="test">
     <a href="/">Home</a>
     <a href="/game">Start Again</a>
   </div> -->
-
-
-  <footer id="page-footer"></footer>
+<audio src="/audios/pacman_beginning.wav" >
+<p>If you are reading this, it is because your browser does not support the audio element.     </p>
+</audio>
 </body>
+<footer>
+  <!-- <a href="http://makersacademy.com" target="_blank">www.makersacademy.com</a> -->
+</footer>
 </html>

@@ -1,9 +1,10 @@
-html {
+html, body {
   background-color: black;
+  height: 100%;
+  position: relative;
 }
 
 .image {
-  background-color: black;
   text-align: center;
 }
 
@@ -20,23 +21,6 @@ html {
   font-family: 'VT323', serif;
   font-size: 200%;
 }
-
-h3 {
-  text-align: center;
-  color: white;
-  background-color: black;
-  font-family: 'VT323', serif;
-  font-size: 200%;
-}
-
-h1 {
-  text-align: center;
-  color: white;
-  background-color: black;
-  font-family: 'VT323', serif;
-  font-size: 300%;
-}
-
 
 .pacman {
 width: 110px;
@@ -75,8 +59,10 @@ padding: 30px;
 }
 
 #map {
-  width: 1200px;
-  height: 800px;
+  
+  margin-bottom: 5rem;
+  /*width: 70rem;*/
+  height: 40rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -92,60 +78,57 @@ body {
 
 }
 
-.page-header {
-
-  height: 80px;
-  overflow: hidden;
-  position: relative;
-  background: #C10606;
-  border-bottom: 5px solid red;
-  border-color: white;
-  box-shadow: 0px 10px 30px black;
-  color: white;
-  padding: 0 0 50px;
-  text-align: center;
 }
 
-  nav {
-    margin: 15px auto;
-    width: 500px;
-    height: 40px;
-    font-size: 130%;
-    color: white;
+#content {
+  background: #eee;
+  width: 540px;
+  margin: 0 auto;
+  padding: 130px 40px 0
+}
+
+@media screen and (max-width: 73.5em) {
+  #content {
+      font-size: 100%;
   }
+  
+}
 
-  nav ul {
-    list-style-type: none;
-    white-space: nowrap;
-    color: white;
+
+header nav {
+  float: left !important
+}
+
+.header-shrink a.logo:hover {
+    background-position: 0 -53pt;
+    transform: rotate(360deg);
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+
+.header-shrink .logo {
+    background: url('http://hawkface.com/developer/test-logo.png') no-repeat 0 -53pt;
+    width: 70px;
+    transition: background-position 0.2s ease 0.0s;
+}
+
+#content {
+  background: #eee;
+  width: 540px;
+  margin: 0 auto;
+  padding: 130px 40px 0
+}
+
+@media screen and (max-width: 73.5em) {
+  #content {
+      font-size: 100%;
   }
-
-  nav ul li {
-    display: inline-block;
-    color: white;
-    margin-left: 50px;
-    padding: 8px;
-    border-radius: 5px;
-    font-family: 'Bangers', cursive;
-    font-size: 130%;
-
-    transition-property: color, background;
-    transition-duration: .3s, .3s;
-    transition-timing-function: linear, linear;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:hover {
-      background: darken($mainColor, 10%);
-    }
-  }
+  
 }
 
 #page-footer {
   font-family: 'Bangers', cursive;
-  height: 2rem;
+  height: 30px;
   background: $mainColor;
   position: relative;
   border-top: 5px solid white;
@@ -158,19 +141,65 @@ body {
 .main_header {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
+  font-size: 7rem;
+  color: white;
+  margin-top: 7rem;
+  margin-bottom: 0px;
+}
+
+.header_choose {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
   font-size: 4rem;
   color: white;
-  margin-top: 50px;
-  margin-bottom: 0px;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 4rem;
+  color: white;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
 }
 
 h2 {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
+  font-size: 2rem;
+  color: rgb(255, 232, 88);
+  margin-top: 0px;
+  margin-top: 0px;
+}
+
+h3 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(99, 215, 255);
+  letter-spacing: 1px;
+}
+
+p {
   color: white;
-  margin-top: 0px;
-  margin-top: 0px;
+  font-family: 'Luckiest Guy', cursive;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.timer {
+  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
+  padding-bottom: 28rem;
+  padding-right: 12rem;
+}
+
+.instructions {
+  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
+  
+  
 }
 
 .new_player {
@@ -179,11 +208,11 @@ h2 {
   font-size: 140%;
 }
 
-.pacman_logo {
+.pacman_logo img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 12rem;
+  margin: auto;
+  /*margin-bottom: 1px;*/
+  height: 15rem;
 }
 
 #pacman_lights {
@@ -198,15 +227,30 @@ h2 {
   height: 3rem;
 }
 
-h3 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 100%;
-  color: white;
+.choose_picture img {
+  display: block;
+  margin: auto;
+  /* margin-bottom: 1px; */
+  height: 7rem;
+}
+
+.choose_pictures  {
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+  height: 5rem;
+}
+
+.game_picture {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+  height: 4rem;
+  margin-bottom: 50px;
 }
 
 a {
   /*color: #F5FF24;*/
-  color: white;
 }
 
 .button {
@@ -215,7 +259,7 @@ a {
   display: block;
   margin: 0 auto;
   border-width: 100px;
-  border-color: #127FDE;
+  border-color: white;
   background-color: white;
   margin-bottom: 50px;
 }
@@ -224,24 +268,24 @@ button {
   font-family: 'Press Start 2P', cursive;
   vertical-align: middle;
   display: block;
-  margin: 110px auto;
-  padding: 60px 45px;
-  font-size: 200%;
+  margin: 25px auto;
+  /* padding: 10px 20px; */
+  font-size: 120%;
   text-transform: uppercase;
   border-radius: 3.3em;
-  border: 0.1em solid black;
+  
+  
   background: #222630;
 
   margin-bottom: 25px;
 
   box-shadow: inset 0 .1em rgba(255,255,255,0.1), 0 .1em .1em black, 0 0.2em rgba(255,255,255,0.1), 0 0 0 .2em rgba(0,0,0,0.1);
 
-  color: #f30;
   text-shadow: 0 0.1em rgba(255,255,255,0.1), 0 -0.1em rgba(0,0,0,0.2);
 }
 
 button:hover {
-  text-shadow: 0 0 .3em #f30;
+  text-shadow: 0 0 1em yellow;
 }
 
 button:active {
@@ -256,4 +300,179 @@ button.medium {
 
 button.small {
   font-size: 0.7em; /* .7em is minimum*/
+}
+
+.first {
+  border-color: #EF21C2;
+  color: #EF21C2;
+}
+
+.second {
+  border-color: blue;
+  color: #F3EA0C;
+}
+
+.third {
+  border-color: green;
+  color: #4381DE;
+}
+
+.slim-shady {
+  border-color: green;
+  color: #15ADE8;
+  #F695B1
+}
+
+.pink-floyd {
+  border-color: green;
+  color: #F695B1;
+}
+
+.kim-jong {
+  border-color: green;
+  color: #EC1920;
+}
+
+.muther-fucker {
+  border-color: green;
+  color: #F47D1E;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+a:hover {
+  color: #28a2a2;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+li a.active {
+  color: #28a2a2;
+}
+
+/* Header Style */
+.hover-space, .hover-message, header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;    
+}
+
+.hover-space {  
+  height: 70px;
+  z-index: 99;
+}
+
+.hover-space:hover header {
+  opacity: 1;
+  transition: 1s;
+}
+
+.hover-message {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  padding: 15px;
+  text-align: center;
+  opacity: 0;
+
+  animation:          fadeout 7s;
+  -webkit-animation:  fadeout 7s;
+  -moz-animation:     fadeout 7s;
+}
+
+header {
+  height: 55px;
+  background-image: url("http://images2.layoutsparks.com/1/66552/caution-girl-yellow-black.gif");
+  text-align: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: red;
+
+  opacity: 0;
+  transition: 1s;
+  transition-delay: 2s;
+  -webkit-transition-delay: 2s;
+
+  animation:          fadeout 4s;
+  -webkit-animation:  fadeout 4s;
+  -moz-animation:     fadeout 4s;  
+}
+
+header .logo {
+  position: absolute;
+  left: 20px;
+  color: black;
+  font-weight: 600;
+  font-family: 'Lobster', cursive;
+}
+
+header nav {
+  position: absolute;
+  left: 20px;
+  color: black;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+/* Keyframes */
+@keyframes fadeout {
+  0%      { opacity: 1; }
+  75%     { opacity: 1; }
+  100%    { opacity: 0; }
+}
+
+@-webkit-keyframes fadeout {
+  0%      { opacity: 1; }
+  75%     { opacity: 1; }
+  100%    { opacity: 0; }
+}
+
+@-moz-keyframes fadeout {
+  0%      { opacity: 1; }
+  75%     { opacity: 1; }
+  100%    { opacity: 0; }
+}
+
+/* Other */
+footer {
+  /*position: fixed;*/
+  position: absolute;
+  bottom: 0;
+  color: white;
+  height: 5rem;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
+
+}
+
+footer p {
+  font-weight: 600;    
+  height: 5rem;
+}
+
+footer, .push {
+  /* margin-top: 100%; */
+  height: 5rem; /* .push must be the same height as .footer */
+  /*clear: both;     position: relative;     z-index: 10;     height: 3em;    */
 }
