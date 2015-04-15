@@ -13,8 +13,9 @@ function queryGPStracker() {
 function updatePlayerLocation(position) {
   setPlayerCoords(position);
   updateMarkerPosition(player);
-  console.log(player.coordinates);
   broadcastPlayerMovement(player);
+  
+  console.log(player.coordinates);
   console.log(map.markers);
 }
 

@@ -1,4 +1,3 @@
-// tags must be strings
 function removeCustomMarker(object) {
   for(i = 0; i < map.markers.length; i++) {
     var marker = map.markers[i]
@@ -13,7 +12,7 @@ function addCustomMarker(object) {
     lat: object.coordinates.latitude,
     lng: object.coordinates.longitude,
     title: object.id,
-    icon: object.icon,
+    icon: object.icon
   });
 }
 

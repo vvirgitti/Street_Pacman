@@ -26,12 +26,15 @@ function updateEnemyLocation(data) {
     if(enemy.id == data.id) {
       enemy.coordinates = data.coordinates;
       updateMarkerPosition(enemy);
+      console.log(enemy);
     }
   }
   console.log(player.enemies);
 }
 
 function broadcastPlayerMovement(player) {
+  // this function is called in the playerGeolocation.js file, 
+  // every time a GPS tracker query is sent
   socket.emit('player moves', {
     id: socket.id,
     coordinates: {
