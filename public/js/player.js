@@ -4,7 +4,7 @@ var Player = function() {
     longitude: undefined
   };
   this.tag = "player";
-  this.icon = '../images/mini_Pacman.png';
+  this.icon;
   this.score = 0;
 };
 

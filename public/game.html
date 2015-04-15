@@ -38,6 +38,13 @@
 
   <div id="pacman_lights"><img src="images/pacman_lights.gif"></div>
 
+  <script type="text/javascript">
+    $.get('/choose', {icon:player.icon}).done(function(data){
+      player.icon = data.icon;
+      console.log(player.icon);
+    });
+  </script>
+
   <div class="section map">
     <div class="container">
       <div class="row">
@@ -57,11 +64,6 @@
         </div>
       </div>
     </div>
-
-  <!-- <div class="test">
-    <a href="/">Home</a>
-    <a href="/game">Start Again</a>
-  </div> -->
 
 
   <footer id="page-footer"></footer>
