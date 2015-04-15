@@ -21,7 +21,6 @@ function eatPelletChance() {
         pellets.pop(pellet);
         matchPelletToMarker(pellet);
       }
-      godMode();
       console.log(map.markers);
     }
   }
@@ -32,6 +31,7 @@ function matchPelletToMarker(pellet) {
     var marker = map.markers[i]
     if(marker.position.k.toFixed(6) === pellet.coordinates.latitude.toFixed(6) && marker.position.D.toFixed(6) === pellet.coordinates.longitude.toFixed(6)) {
       map.removeMarker(marker);
+      godMode();
     }
   }
 }
