@@ -1,6 +1,7 @@
 var player = new Player();
 var pellets = [];
 
+
 $(document).ready(function() {
   listenForEnemyLocation();
   listenForEnemyEscape();

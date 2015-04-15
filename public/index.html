@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Street Pacman in Javascript</title>
-  <style>
-  #map {
-    width: 1200px;
-    height: 800px;
-  }
-  </style>
+  <meta charset="utf-8">
+  <title> Street PacMan</title>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="https://maps.google.com/maps/api/js?sensor=true&libraries=geometry"></script>
-  <script src="js/gmaps.js"></script>
-  <script src="js/player.js"></script>
-  <script src="js/pellet.js"></script>
-  <script src="js/markerHelpers.js"></script>
-  <script src="js/playerGeolocation.js"></script>
-  <script src="js/gameLogic.js"></script>
-  <script src="js/gameController.js"></script>
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="skeleton.css">
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d-float' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Bangers&effect=neon|3d' rel='stylesheet' type='text/css'
 </head>
 <body>
-  <div id="map"></div>
-  <div id="score"></div>
-  <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
-  <script src="js/socket.js"></script>
-  <script>
-  var map = new GMaps({
-    el: '#map',
-    lat: -12.043333,
-    lng: -77.028333
-  });
-  map.setZoom(20);
-  </script>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="font-effect-3d-float">
+          <nav>
+            <ul>
+              <div class="four columns"><li><a href="/">Home</a></li></div>
+              <div class="four columns"><li><a href="/choose">New Game</a></li></div>
+              <div class="four columns"><li><a href="/game">Start Game</a></li></div>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section hero">
+    <div class="container">
+      <div class="row">
+        <div class="twelve columns"><h1 class='main_header'>Street<br>Pacman</h1></div>
+        <div class="twelve columns"><img class="pacman_logo" src="images/pacman_eating.gif"></div>
+      </div>
+    </div>
+  </div>
+
+    <form action="/choose" method="post">
+      <button type="submit" value="New Game">New Game </button>
+    </form>
+
+  <footer id="page-footer"></footer>
+
 </body>
 </html>
