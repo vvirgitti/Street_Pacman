@@ -4,6 +4,7 @@ var Player = function() {
     longitude: undefined
   };
   this.id;
+  this.status;
   this.tag = "player";
   this.icon;
   this.score = 0;
