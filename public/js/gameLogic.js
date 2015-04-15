@@ -7,6 +7,7 @@ function calculateDistance(obj) {
 }
 
 function setPelletPosition(pellet, lat, lon) {
+  pellet.id = "pellet" + pellets.length
   pellet.setPosition(lat, lon);
   pellets.push(pellet);
   addCustomMarker(pellet);
@@ -18,7 +19,8 @@ function eatPelletChance() {
     var pellet = pellets[i]
     calculateDistance(pellet)
       if(dist < 2) {
-        pellets.pop(pellet);
+        var i = pellets.indexOf(pellet)
+        pellets.splice(i, 1);
         matchPelletToMarker(pellet);
       }
       console.log(map.markers);
@@ -29,7 +31,7 @@ function eatPelletChance() {
 function matchPelletToMarker(pellet) {
   for(i = 0; i < map.markers.length; i++) {
     var marker = map.markers[i]
-    if(marker.position.k.toFixed(6) === pellet.coordinates.latitude.toFixed(6) && marker.position.D.toFixed(6) === pellet.coordinates.longitude.toFixed(6)) {
+    if(marker.title == pellet.id) {
       map.removeMarker(marker);
       godMode();
     }
@@ -41,7 +43,7 @@ function matchEnemyToMarker(enemy) {
     var marker = map.markers[i]
     if(marker.title == enemy.id) {
       map.removeMarker(marker);
-      pwnMsg();
+      pwnMsg(enemy);
     }
   }
 }

@@ -55,12 +55,22 @@ function broadcastPlayerMovement(player) {
   });
 }
 
-function pwnMsg() {
-  socket.emit('pwned', 'pwned');
+function pwnMsg(enemy) {
+  socket.emit('pwned', { id: enemy.id });
 }
 
 function godMode() {
   socket.emit('1337', '1337');
+}
+
+function pwned() {
+  socket.on('player pwned', function(data) {
+    if(player.id = data.id) {
+      removeCustomMarker(player);
+    } else {
+      removeEnemy(data);
+    }
+  });
 }
 
 function checkForUndefId() {

@@ -3,7 +3,7 @@ var Pellet = function() {
     latitude: undefined,
     longitude: undefined
   };
-  this.id = "pellet";
+  this.id;
   this.icon = '../images/pellets_small.png';
 };
 
