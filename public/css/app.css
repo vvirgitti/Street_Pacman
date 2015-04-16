@@ -53,14 +53,21 @@ padding: 30px;
   height: 150px;
 }
 
+.choose_picture img {
+  display: block;
+  margin: auto;
+  /* margin-bottom: 1px; */
+  height: 7rem;
+}
+
 .pacman:hover {
   width: 150px;
   height: 150px;
 }
 
 #map {
-  width: 800px;
-  height: 400px;
+  width: 900px;
+  height: 600px;
   margin-bottom: 5rem;
   /*width: 70rem;*/
  /* height: 40rem;*/
@@ -171,7 +178,7 @@ h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 4rem;
   color: white;
-  margin-top: 7rem;
+  margin-top: 8rem;
   margin-bottom: 3rem;
 }
 
@@ -201,8 +208,8 @@ p {
 }
 
 .timer {
-  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-  padding-bottom: 28rem;
+  /*background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");*/
+  padding-bottom: 4rem;
   padding-right: 12rem;
 }
 
@@ -237,13 +244,6 @@ p {
   height: 3rem;
 }
 
-.choose_picture img {
-  display: block;
-  margin: auto;
-  /* margin-bottom: 1px; */
-  height: 7rem;
-}
-
 .choose_pictures  {
   display: block;
     margin-left: auto;
@@ -255,15 +255,15 @@ p {
   display: block;
     margin-left: auto;
     margin-right: auto;
-  height: 4rem;
-  margin-bottom: 50px;
+  height: 7rem;
+  margin-bottom: 10px;
 }
 
 a {
   /*color: #F5FF24;*/
 }
 
-.button {
+/*.button {
 
   font-family: 'Press Start 2P', cursive;
   display: block;
@@ -272,20 +272,21 @@ a {
   border-color: white;
   background-color: white;
   margin-bottom: 50px;
-}
+}*/
 
 button {
   font-family: 'Press Start 2P', cursive;
   vertical-align: middle;
   display: block;
-  margin: 40px auto;
+  margin: auto;
   padding: 45px 45px;
   font-size: 100%;
 /*  margin: 25px auto; */
-/* padding: 10px 20px; */
+ padding: 10px 20px; 
 /*  font-size: 120%; */
   text-transform: uppercase;
   border-radius: 3.3em;
+  height: 50px;
 
 
   background: #222630;
