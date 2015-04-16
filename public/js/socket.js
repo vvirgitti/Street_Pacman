@@ -21,6 +21,7 @@ function listenForEnemyLocation() {
   socket.on('new player location', function(data) {
     checkForEnemyRedundancy(data);
     checkForUndefId();
+    checkForDuplicateMarker();
     if(contains(player.fallenEnemies, data) == false && contains(player.enemies, data) == true) {
       updateEnemyLocation(data);
     }
@@ -117,10 +118,11 @@ function isPwned(data) {
   if(data.id == player.id) {
     clearInterval(geolocQueryLoop);
     removeCustomMarker(player);
+    alert("you've been pwned!!!");
   } else {
     removeEnemy(data);
   }
-};
+}
 
 function checkForUndefId() {
   for(i = 0; i < player.enemies.length; i++) {
@@ -152,6 +154,15 @@ function contains(array, obj) {
 
 function broadcastPlayerChosen(iconName) {
   socket.emit('hide character icon', { icon: iconName });
+}
+
+function checkForDuplicateMarker() {
+  for(i = 0; i < map.markers.length; i++) {
+    var marker = map.markers[i];
+    if(marker.title == undefined ) {
+      map.removeMarker(marker);
+    }
+  }
 }
 
 function listenForChosenCharacter() {
