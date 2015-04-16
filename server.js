@@ -71,7 +71,6 @@ function start() {
       console.log(data);
       socket.broadcast.emit('hide chosen character icon');
     });
-
   });
 
 
