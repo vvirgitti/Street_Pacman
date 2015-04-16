@@ -16,8 +16,6 @@ var coords = {
   longitude: undefined
 };
 
-app.use(express.static('public'));
-
 throng(start, {
   workers: WORKERS,
   lifetime: Infinity
