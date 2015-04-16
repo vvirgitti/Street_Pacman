@@ -27,18 +27,6 @@
 </head>
 
 <body>
-
-  <div class="hover-space">
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/" class="font-effect-outline">Home</a></li>
-          <li><a href="/choose" class="font-effect-outline">New-Game</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
-
   <div id="gameOver" style="position:absolute; z-index:1"><img src="images/game-over.jpg" style="display:none"></div>
   <div id="youWin" style="position:absolute; z-index:1"><img src="images/you-win.jpg" style="display:none"></div>
 
@@ -46,8 +34,6 @@
     <div class="container">
       <div class="row">
 
-        <h1>Game Starts!</h1></div>
-        <img class="game_picture" src="images/pacman_lights.gif">
         <!-- <p div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:white"> Pacman is invincible </p> -->
       </div>
     </div>
@@ -55,30 +41,27 @@
 
   <div class="container">
     <div class="row">
-
       <div class="twelve columns">
         <div class="container section map">
-            <div id="map"></div>
-              <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
-              <script src="js/socket.js"></script>
-              <script>
+          <div id="map"></div>
+            <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+            <script src="js/socket.js"></script>
+            <script>
               var map = new GMaps({
                 el: '#map',
-                lat: -12.043333,
-                lng: -77.028333
+                lat: 51.517467,
+                lng: -0.073424
               });
-                map.setZoom(20);
-              </script>
+                map.setZoom(18);
 
+                function resizeMap () {
+                  var myMap = document.getElementBYId('map');
+                  myMap.classList.toggle("fullscreen");
+                  console.log(myMap);
+                }
+            </script>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="twelve columns">
-    <div class="container">
-      <a href="/choose"><div class="first"><button type="submit" class="font-effect-neon">New Game</button></div></a>
-      <a href="/index"><div class="second"><button type="submit">Home</button></div></a>
     </div>
   </div>
 

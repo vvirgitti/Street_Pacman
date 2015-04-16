@@ -8,18 +8,9 @@ html, body {
   text-align: center;
 }
 
-.test {
-  position: fixed;
-  top: 300px;
-  background-color: white;
-  text-align: center;
-  color: red;
-  height: 40px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'VT323', serif;
-  font-size: 200%;
+.fullscreen {
+  width: 100%;
+  height: 100%;
 }
 
 .pacman {
@@ -86,17 +77,6 @@ body {
 
 }
 
-  /*height: 50px;
-  overflow: hidden;
-  position: relative;
-  background: #C10606;
-  border-bottom: 5px solid red;
-  border-color: white;
-  box-shadow: 0px 10px 30px black;
-  color: white;
-  padding: 0 0 50px;
-  text-align: center;*/
-
 #content {
   background: #eee;
   width: 540px;
@@ -144,7 +124,7 @@ header nav {
 }
 
 #page-footer {
-  font-family: 'Bangers', cursive;
+  font-family: 'Press Start 2P', cursive;
   height: 30px;
   background: $mainColor;
   position: relative;
@@ -192,7 +172,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
   text-align: center;
   color: rgb(99, 215, 255);
@@ -201,7 +181,7 @@ h3 {
 
 p {
   color: white;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Press Start 2P', cursive;
   text-transform: lowercase;
   letter-spacing: 1px;
   text-align: center;
@@ -282,7 +262,7 @@ button {
   padding: 45px 45px;
   font-size: 100%;
 /*  margin: 25px auto; */
- padding: 10px 20px; 
+ padding: 10px 20px;
 /*  font-size: 120%; */
   text-transform: uppercase;
   border-radius: 3.3em;
@@ -437,14 +417,14 @@ header .logo {
   left: 20px;
   color: black;
   font-weight: 600;
-  font-family: 'Lobster', cursive;
+  font-family: 'Press Start 2P', cursive;
 }
 
 header nav {
   position: absolute;
   left: 20px;
   color: black;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Press Start 2P', cursive;
 }
 
 /* Keyframes */
@@ -478,7 +458,7 @@ footer {
   right: 0;
   text-align: center;
   background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-  font-family: 'Lobster', cursive;
+  font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
 
 }
