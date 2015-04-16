@@ -5,7 +5,7 @@ function calculateDistance(obj) {
 }
 
 function setPelletPosition(pellet, lat, lon) {
-  pellet.id = "pellet" + pellets.length
+  pellet.id = "pellet" + pellets.length;
   pellet.setPosition(lat, lon);
   pellets.push(pellet);
   addCustomMarker(pellet);
@@ -15,8 +15,7 @@ function eatPelletChance() {
   for(i = 0; i < pellets.length; i++) {
   var pellet = pellets[i];
   var pelletDist = calculateDistance(pellet);
-    if(pelletDist < 100) {
-      console.log(pelletDist);
+    if(pelletDist < 10) {
       var i = pellets.indexOf(pellet)
       pellets.splice(i, 1);
       matchPelletToMarker(pellet);
