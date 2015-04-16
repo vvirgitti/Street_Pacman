@@ -11,7 +11,7 @@ html, body, #map {
   height: 100%;
 }
 
-.character {
+/*.character {
   float: left;
   width: 110px;
   height: 110px;
@@ -23,14 +23,14 @@ html, body, #map {
        -o-transition: all 1s ease;
       -ms-transition: all 1s ease;
           transition: all 1s ease;
-}
+}*/
 
 .character:hover {
   width: 150px;
   height: 150px;
 }
 
-.choose_picture img {
+.character img {
   display: block;
   margin: auto;
   /* margin-bottom: 1px; */
@@ -159,7 +159,7 @@ p {
   height: 3rem;
 }
 
-.choose_pictures  {
+.character  {
   display: block;
     margin-left: auto;
     margin-right: auto
