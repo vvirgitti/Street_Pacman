@@ -153,14 +153,8 @@ function checkForDuplicateMarker() {
   }
 }
 
-<<<<<<< HEAD
 function listenForChosenCharacter() {
   socket.on('hide chosen character icon', function(data) {
     hide(data.icon);
-=======
-function hideIcon() {
-  socket.emit('hide icon start', function(name){
-    hide(name);
->>>>>>> 80d7d2eacb6a779c612ddac80b13d9df3a5e5516
   });
 }
