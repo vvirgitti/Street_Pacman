@@ -12,16 +12,38 @@ function setPelletPosition(pellet, lat, lon) {
 }
 
 function eatPelletChance() {
-    for(i = 0; i < pellets.length; i++) {
-    var pellet = pellets[i];
-    var pelletDist = calculateDistance(pellet);
-      if(pelletDist < 10) {
-        var i = pellets.indexOf(pellet)
-        pellets.splice(i, 1);
-        matchPelletToMarker(pellet);
-      }
+  for(i = 0; i < pellets.length; i++) {
+  var pellet = pellets[i];
+  var pelletDist = calculateDistance(pellet);
+    if(pelletDist < 100) {
+      console.log(pelletDist);
+      var i = pellets.indexOf(pellet)
+      pellets.splice(i, 1);
+      matchPelletToMarker(pellet);
+      statusLoop;
+      invictus(player);
+      mortal(player);
     }
+  }
+}
 
+var statusLoop = function(player) {
+  setInterval(invictus(player), 2000);
+}
+
+function invictus(player) {
+  player.status = 'invincible';
+  broadcast1337(player);
+}
+
+function mortal(player) {
+  clearInterval(statusLoop, 60000);
+  setTimeout(function() { revertToDefaultStatus(player) }, 60000);
+}
+
+function revertToDefaultStatus(player) {
+  player.status = 'weak';
+  broadcastRevertStatus(player);
 }
 
 function matchPelletToMarker(pellet) {
@@ -29,7 +51,6 @@ function matchPelletToMarker(pellet) {
     var marker = map.markers[i]
     if(marker.title == pellet.id) {
       map.removeMarker(marker);
-      broadcast1337();
     }
   }
 }
@@ -45,14 +66,13 @@ function matchEnemyToMarker(enemy) {
 }
 
 function eatsWeak(player) {
-    for(i = 0; i < player.enemies.length; i++ ) {
+  for(i = 0; i < player.enemies.length; i++ ) {
     var enemy = player.enemies[i];
-      var enemyDist = calculateDistance(enemy);
-      if (enemyDist < 10) {
-        player.fallenEnemies.push(enemy);
-        player.enemies.splice(i, 1);
-        matchEnemyToMarker(enemy);
-      }
+    var enemyDist = calculateDistance(enemy);
+    if (enemyDist < 10) {
+      player.fallenEnemies.push(enemy);
+      player.enemies.splice(i, 1);
+      matchEnemyToMarker(enemy);
     }
-
+  }
 }

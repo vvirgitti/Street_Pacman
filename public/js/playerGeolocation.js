@@ -14,7 +14,7 @@ function updatePlayerLocation(position) {
   setPlayerCoords(position);
   updateMarkerPosition(player);
 
-  if(player.status == 'Pacman') {
+  if(player.tag == 'Pacman') {
     eatPelletChance(player);
   }
 

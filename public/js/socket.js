@@ -71,8 +71,44 @@ function broadcastPwnMsg(enemy) {
   socket.emit('pwned', { id: enemy.id });
 }
 
-function broadcast1337() {
-  socket.emit('1337', '1337');
+function broadcast1337(player) {
+  socket.emit('1337', { id: player.id, status: player.status });
+}
+
+function broadcastRevertStatus(player) {
+  socket.emit('revert to default', {id: player.id, status: player.status})
+}
+
+function listenForEndOf1337() {
+  socket.on('end of 1337', function(data) {
+    changePlayerStatus(data);
+  });
+}
+
+function changePlayerStatus(data) {
+  if(player.id == data.id && player.status == 'weak') {
+    player.status = 'invincible';
+  } else {
+    player.status = 'weak';
+  }
+  changeEnemyStatus(data);
+}
+
+function changeEnemyStatus(data) {
+  for(i = 0; i < player.enemies.length; i++) {
+    var enemy = player.enemies[i]
+    if(enemy.status == 'weak') {
+      enemy.status = 'invincible'
+    } else {
+      enemy.status = 'weak'
+    }
+  }
+}
+
+function listenFor1337() {
+  socket.on('player 1337', function(data) {
+    changePlayerStatus(data);
+  });
 }
 
 function isPwned(data) {
@@ -114,9 +150,12 @@ function contains(array, obj) {
   return false;
 }
 
+function broadcastPlayerChosen(iconName) {
+  socket.emit('hide character icon', { icon: iconName });
+}
 
-function hideIcon() {
-  socket.on('hide icon start', function(name){
-    hide(name);
+function listenForChosenCharacter() {
+  socket.on('hide chosen character icon', function(data) {
+    hide(data.icon);
   });
 }

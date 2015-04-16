@@ -60,11 +60,16 @@ function start() {
     });
 
     socket.on('1337', function(data) {
-      console.log(data);
+      socket.broadcast.emit('player 1337', data);
     });
 
-    socket.on('hide icon start game', function(data){
-      socket.broadcast.emit('hide icon start');
+    socket.on('revert to default', function(data) {
+      socket.emit('end of 1337', data)
+    });
+
+    socket.on('hide character icon', function(data){
+      console.log(data);
+      socket.broadcast.emit('hide chosen character icon');
     });
 
   });

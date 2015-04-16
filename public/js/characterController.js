@@ -36,6 +36,7 @@ function getIcon(icon) {
   console.log(player.icon);
 }
 
-  function hide(name){
-    document.getElementById(name).style.display='none';
-  }
+function hide(name){
+  document.getElementById(name).style.display='none';
+  setInterval(broadcastPlayerChosen(name), 2000);
+}
