@@ -1,28 +1,14 @@
-html, body {
+html, body, #map {
   background-color: black;
   height: 100%;
   position: relative;
-}
-
-.image {
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .fullscreen {
   width: 100%;
   height: 100%;
-}
-
-.pacman {
-width: 110px;
-height: 110px;
-margin: 15px;
-padding: 30px;
--webkit-transition: all 1s ease;
-   -moz-transition: all 1s ease;
-     -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-        transition: all 1s ease;
 }
 
 .character {
@@ -57,26 +43,18 @@ padding: 30px;
 }
 
 #map {
-  width: 900px;
-  height: 600px;
+  width: 100%;
+  height: 800px !important;
   margin-bottom: 5rem;
-  /*width: 70rem;*/
- /* height: 40rem;*/
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
+
 
 .container {
   margin: 0px auto;
 }
 
-body {
-    background-color: black;
-    /*background-color: #D32D2D;*/
-    /*background-image: url('pacman_eating.gif')*/
-
-}
-
 #content {
   background: #eee;
   width: 540px;
@@ -91,49 +69,6 @@ body {
 
 }
 
-
-header nav {
-  float: left !important
-}
-
-.header-shrink a.logo:hover {
-    background-position: 0 -53pt;
-    transform: rotate(360deg);
-    transition-duration: 0.8s;
-    transition-property: transform;
-}
-
-.header-shrink .logo {
-    background: url('http://hawkface.com/developer/test-logo.png') no-repeat 0 -53pt;
-    width: 70px;
-    transition: background-position 0.2s ease 0.0s;
-}
-
-#content {
-  background: #eee;
-  width: 540px;
-  margin: 0 auto;
-  padding: 130px 40px 0
-}
-
-@media screen and (max-width: 73.5em) {
-  #content {
-      font-size: 100%;
-  }
-
-}
-
-#page-footer {
-  font-family: 'Press Start 2P', cursive;
-  height: 30px;
-  background: $mainColor;
-  position: relative;
-  border-top: 5px solid white;
-  color: white;
-  padding: 30px;
-  box-shadow: 0px -10px 30px black;
-  font-size: 1.2rem;
-}
 
 .main_header {
   text-align: center;
@@ -238,21 +173,6 @@ p {
   height: 7rem;
   margin-bottom: 10px;
 }
-
-a {
-  /*color: #F5FF24;*/
-}
-
-/*.button {
-
-  font-family: 'Press Start 2P', cursive;
-  display: block;
-  margin: 0 auto;
-  border-width: 100px;
-  border-color: white;
-  background-color: white;
-  margin-bottom: 50px;
-}*/
 
 button {
   font-family: 'Press Start 2P', cursive;
@@ -427,6 +347,8 @@ header nav {
   font-family: 'Press Start 2P', cursive;
 }
 
+
+
 /* Keyframes */
 @keyframes fadeout {
   0%      { opacity: 1; }
@@ -444,32 +366,4 @@ header nav {
   0%      { opacity: 1; }
   75%     { opacity: 1; }
   100%    { opacity: 0; }
-}
-
-/* Other */
-footer {
-  /*position: fixed;*/
-  position: absolute;
-  bottom: 0;
-  color: white;
-  height: 5rem;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.5rem;
-
-}
-
-footer p {
-  font-weight: 600;
-  height: 5rem;
-}
-
-footer, .push {
-  /* margin-top: 100%; */
-  height: 5rem; /* .push must be the same height as .footer */
-  /*clear: both;     position: relative;     z-index: 10;     height: 3em;    */
 }
