@@ -11,7 +11,7 @@ function setPelletPosition(pellet, lat, lon) {
   addCustomMarker(pellet);
 }
 
-function eatPelletChance() {
+function eatPelletChance(player) {
   for(i = 0; i < pellets.length; i++) {
   var pellet = pellets[i];
   var pelletDist = calculateDistance(pellet);
@@ -22,6 +22,7 @@ function eatPelletChance() {
       statusLoop;
       invictus(player);
       mortal(player);
+      console.log(player.status)
     }
   }
 }

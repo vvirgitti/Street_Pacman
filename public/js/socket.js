@@ -13,6 +13,7 @@ socket.on('connect', function() {
 function listenForPwning() {
   socket.on('player pwned', function(data) {
     console.log('pwning in progress...')
+    console.log(player.status)
     isPwned(data);
   });
 }
@@ -83,6 +84,7 @@ function broadcastRevertStatus(player) {
 function listenForEndOf1337() {
   socket.on('end of 1337', function(data) {
     changePlayerStatus(data);
+    // changeEnemyStatus(data);
   });
 }
 
@@ -91,18 +93,6 @@ function changePlayerStatus(data) {
     player.status = 'invincible';
   } else {
     player.status = 'weak';
-  }
-  changeEnemyStatus(data);
-}
-
-function changeEnemyStatus(data) {
-  for(i = 0; i < player.enemies.length; i++) {
-    var enemy = player.enemies[i]
-    if(enemy.status == 'weak') {
-      enemy.status = 'invincible'
-    } else {
-      enemy.status = 'weak'
-    }
   }
 }
 
@@ -113,8 +103,6 @@ function listenFor1337() {
 }
 
 function isPwned(data) {
-  console.log(data.id)
-  console.log(player.id)
   if(data.id == player.id) {
     clearInterval(geolocQueryLoop);
     removeCustomMarker(player);
