@@ -63,8 +63,9 @@ function start() {
       console.log(data);
     });
 
-    socket.on('hide icon start game', function(data){
-      socket.broadcast.emit('hide icon start');
+    socket.on('hide icon start', function(data){
+      socket.emit('hide icon start');
+      console.log(data);
     });
 
   });

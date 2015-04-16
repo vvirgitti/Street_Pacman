@@ -116,7 +116,7 @@ function contains(array, obj) {
 
 
 function hideIcon() {
-  socket.on('hide icon start', function(name){
+  socket.emit('hide icon start', function(name){
     hide(name);
   });
 }
