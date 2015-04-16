@@ -22,7 +22,6 @@ function listenForEnemyLocation() {
   socket.on('new player location', function(data) {
     checkForEnemyRedundancy(data);
     checkForUndefId();
-    checkForDuplicateMarker();
     if(contains(player.fallenEnemies, data) == false && contains(player.enemies, data) == true) {
       updateEnemyLocation(data);
     }
@@ -65,7 +64,8 @@ function broadcastPlayerMovement(player) {
       latitude: player.coordinates.latitude,
       longitude: player.coordinates.longitude
     },
-    icon: player.icon
+    icon: player.icon,
+    status: player.status
   });
 }
 

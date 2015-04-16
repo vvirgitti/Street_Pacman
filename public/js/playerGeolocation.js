@@ -13,6 +13,7 @@ function queryGPStracker() {
 function updatePlayerLocation(position) {
   setPlayerCoords(position);
   updateMarkerPosition(player);
+  checkForDuplicateMarker();
 
   if(player.tag == 'Pacman') {
     eatPelletChance(player);

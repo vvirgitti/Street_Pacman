@@ -69,7 +69,7 @@ function eatsWeak(player) {
   for(i = 0; i < player.enemies.length; i++ ) {
     var enemy = player.enemies[i];
     var enemyDist = calculateDistance(enemy);
-    if (enemyDist < 10) {
+    if (enemyDist < 10 && enemy.status == 'weak') {
       player.fallenEnemies.push(enemy);
       player.enemies.splice(i, 1);
       matchEnemyToMarker(enemy);
