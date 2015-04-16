@@ -84,7 +84,6 @@ function broadcastRevertStatus(player) {
 function listenForEndOf1337() {
   socket.on('end of 1337', function(data) {
     changePlayerStatus(data);
-    // changeEnemyStatus(data);
   });
 }
 
@@ -158,3 +157,4 @@ function listenForChosenCharacter() {
     hide(data.icon);
   });
 }
+

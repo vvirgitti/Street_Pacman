@@ -17,50 +17,74 @@
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="css/app.css">
-  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d-float' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Bangers&effect=neon|3d' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d-float' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Bangers&effect=neon|3d' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d|neon|fire' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=outline">
+  <link href='http://fonts.googleapis.com/css?family=Lobster|Luckiest+Guy' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 
-  <header class="page-header">
-        <div class="font-effect-3d-float">
-          <nav>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/choose">New Game</a></li>
-              <li><a href="/game">Start Game</a></li>
-            </ul>
-          </nav>
-    </div>
-  </header>
+  <div class="hover-space">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/" class="font-effect-outline">Home</a></li>
+          <li><a href="/choose" class="font-effect-outline">New-Game</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 
   <div id="gameOver" style="position:absolute; z-index:1"><img src="images/game-over.jpg" style="display:none"></div>
   <div id="youWin" style="position:absolute; z-index:1"><img src="images/you-win.jpg" style="display:none"></div>
 
-  <p div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:white"> Pacman is invincible </p>
-
-  <div class="section map">
+  <div class="twelve columns">
     <div class="container">
       <div class="row">
-        <div class="twelve columns">
-          <div id="map" style="position:absolute; z-index:0"></div>
-          <div id="score"></div>
-            <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
-            <script src="js/socket.js"></script>
-            <script>
-            var map = new GMaps({
-              el: '#map',
-              lat: 51.517467,
-              lng: -0.073424
-            });
-              map.setZoom(18);
-            </script>
-          </div>
+
+        <h1>Game Starts!</h1></div>
+        <img class="game_picture" src="images/pacman_lights.gif">
+        <!-- <p div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:white"> Pacman is invincible </p> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="twelve columns">
+        <div class="container section map">
+            <div id="map"></div>
+              <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+              <script src="js/socket.js"></script>
+              <script>
+              var map = new GMaps({
+                el: '#map',
+                lat: -12.043333,
+                lng: -77.028333
+              });
+                map.setZoom(20);
+              </script>
+
         </div>
       </div>
     </div>
+  </div>
 
-    <footer id="page-footer"></footer>
+  <div class="twelve columns">
+    <div class="container">
+      <a href="/choose"><div class="first"><button type="submit" class="font-effect-neon">New Game</button></div></a>
+      <a href="/index"><div class="second"><button type="submit">Home</button></div></a>
+    </div>
+  </div>
+
+  <audio src="/audios/pacman_beginning.mp3" >
+  <p>If you are reading this, it is because your browser does not support the audio element.</p>
+  </audio>
+
 </body>
 </html>

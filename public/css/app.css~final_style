@@ -1,5 +1,5 @@
 html, body {
-  background-color: black;
+  background-color: white;
   height: 100%;
   position: relative;
 }
@@ -53,24 +53,16 @@ padding: 30px;
   height: 150px;
 }
 
-.choose_picture img {
-  display: block;
-  margin: auto;
-  /* margin-bottom: 1px; */
-  height: 7rem;
-}
-
 .pacman:hover {
   width: 150px;
   height: 150px;
 }
 
 #map {
-  width: 900px;
-  height: 600px;
+  
   margin-bottom: 5rem;
   /*width: 70rem;*/
- /* height: 40rem;*/
+  height: 40rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -86,7 +78,14 @@ body {
 
 }
 
-  /*height: 50px;
+}
+
+#content {
+  background: #eee;
+  width: 540px;
+  margin: 0 auto;
+  padding: 130px 40px 0
+  height: 50px;
   overflow: hidden;
   position: relative;
   background: #C10606;
@@ -95,20 +94,14 @@ body {
   box-shadow: 0px 10px 30px black;
   color: white;
   padding: 0 0 50px;
-  text-align: center;*/
-
-#content {
-  background: #eee;
-  width: 540px;
-  margin: 0 auto;
-  padding: 130px 40px 0
+  text-align: center;
 }
 
 @media screen and (max-width: 73.5em) {
   #content {
       font-size: 100%;
   }
-
+  
 }
 
 
@@ -140,7 +133,7 @@ header nav {
   #content {
       font-size: 100%;
   }
-
+  
 }
 
 #page-footer {
@@ -159,7 +152,7 @@ header nav {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
   font-size: 7rem;
-  color: white;
+  color: red;
   margin-top: 7rem;
   margin-bottom: 0px;
 }
@@ -178,7 +171,7 @@ h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 4rem;
   color: white;
-  margin-top: 8rem;
+  margin-top: 7rem;
   margin-bottom: 3rem;
 }
 
@@ -208,15 +201,15 @@ p {
 }
 
 .timer {
-  /*background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");*/
-  padding-bottom: 4rem;
+  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
+  padding-bottom: 28rem;
   padding-right: 12rem;
 }
 
 .instructions {
   background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-
-
+  
+  
 }
 
 .new_player {
@@ -244,6 +237,13 @@ p {
   height: 3rem;
 }
 
+.choose_picture img {
+  display: block;
+  margin: auto;
+  /* margin-bottom: 1px; */
+  height: 7rem;
+}
+
 .choose_pictures  {
   display: block;
     margin-left: auto;
@@ -255,15 +255,15 @@ p {
   display: block;
     margin-left: auto;
     margin-right: auto;
-  height: 7rem;
-  margin-bottom: 10px;
+  height: 4rem;
+  margin-bottom: 50px;
 }
 
 a {
   /*color: #F5FF24;*/
 }
 
-/*.button {
+.button {
 
   font-family: 'Press Start 2P', cursive;
   display: block;
@@ -272,23 +272,25 @@ a {
   border-color: white;
   background-color: white;
   margin-bottom: 50px;
-}*/
+}
 
 button {
   font-family: 'Press Start 2P', cursive;
   vertical-align: middle;
   display: block;
-  margin: auto;
+<<<<<<< HEAD:public/app.css
+  margin: 25px auto;
+  /* padding: 10px 20px; */
+  font-size: 120%;
+=======
+  margin: 40px auto;
   padding: 45px 45px;
   font-size: 100%;
-/*  margin: 25px auto; */
- padding: 10px 20px; 
-/*  font-size: 120%; */
+>>>>>>> 52769278b01910ced4d9d771b96911c51809ac8d:public/css/app.css
   text-transform: uppercase;
   border-radius: 3.3em;
-  height: 50px;
-
-
+  
+  
   background: #222630;
 
   margin-bottom: 25px;
@@ -316,8 +318,6 @@ button.medium {
 button.small {
   font-size: 0.7em; /* .7em is minimum*/
 }
-
-/* final_style mods */
 
 .first {
   border-color: #EF21C2;
@@ -388,10 +388,10 @@ li a.active {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0;    
 }
 
-.hover-space {
+.hover-space {  
   height: 70px;
   z-index: 99;
 }
@@ -429,7 +429,7 @@ header {
 
   animation:          fadeout 4s;
   -webkit-animation:  fadeout 4s;
-  -moz-animation:     fadeout 4s;
+  -moz-animation:     fadeout 4s;  
 }
 
 header .logo {
@@ -484,7 +484,7 @@ footer {
 }
 
 footer p {
-  font-weight: 600;
+  font-weight: 600;    
   height: 5rem;
 }
 
