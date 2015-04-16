@@ -25,10 +25,10 @@ html, body, #map {
           transition: all 1s ease;
 }*/
 
-.character:hover {
+/*.character:hover {
   width: 150px;
   height: 150px;
-}
+}*/
 
 .character img {
   display: block;
@@ -37,10 +37,10 @@ html, body, #map {
   height: 7rem;
 }
 
-.pacman:hover {
+/*.pacman:hover {
   width: 150px;
   height: 150px;
-}
+}*/
 
 #map {
   width: 100%;
@@ -187,6 +187,7 @@ button {
   text-transform: uppercase;
   border-radius: 3.3em;
   height: 50px;
+  border-color: white;
 
 
   background: #222630;
