@@ -1,15 +1,29 @@
-// this file contains Socket.io client functions
+// this file contains Socket.io client functions,
+// methods preceded by "listenFor" or "broadcast" in other files are strictly socket.io methods
 var socket = io();
 
 socket.on('server full', function(data) {
   console.log(data.answer);
 });
 
+socket.on('connect', function() {
+  player.id = socket.id;
+});
+
+function listenForPwning() {
+  socket.on('player pwned', function(data) {
+    console.log('pwning in progress...')
+    isPwned(data);
+  });
+}
+
 function listenForEnemyLocation() {
   socket.on('new player location', function(data) {
     checkForEnemyRedundancy(data);
     checkForUndefId();
-    updateEnemyLocation(data);
+    if(contains(player.fallenEnemies, data) == false && contains(player.enemies, data) == true) {
+      updateEnemyLocation(data);
+    }
   });
 }
 
@@ -36,10 +50,8 @@ function updateEnemyLocation(data) {
       enemy.coordinates = data.coordinates;
       enemy.icon = data.icon;
       updateMarkerPosition(enemy);
-      console.log(enemy);
     }
   }
-  console.log(player.enemies);
 }
 
 function broadcastPlayerMovement(player) {
@@ -55,23 +67,24 @@ function broadcastPlayerMovement(player) {
   });
 }
 
-function pwnMsg(enemy) {
+function broadcastPwnMsg(enemy) {
   socket.emit('pwned', { id: enemy.id });
 }
 
-function godMode() {
+function broadcast1337() {
   socket.emit('1337', '1337');
 }
 
-function pwned() {
-  socket.on('player pwned', function(data) {
-    if(player.id = data.id) {
-      removeCustomMarker(player);
-    } else {
-      removeEnemy(data);
-    }
-  });
-}
+function isPwned(data) {
+  console.log(data.id)
+  console.log(player.id)
+  if(data.id == player.id) {
+    clearInterval(geolocQueryLoop);
+    removeCustomMarker(player);
+  } else {
+    removeEnemy(data);
+  }
+};
 
 function checkForUndefId() {
   for(i = 0; i < player.enemies.length; i++) {
@@ -83,15 +96,18 @@ function checkForUndefId() {
 }
 
 function checkForEnemyRedundancy(data) {
-  if(contains(player.enemies, data) == false) {
+  if(contains(player.enemies, data) == false && contains(player.fallenEnemies, data) == false) {
     player.enemies.push(data);
-  };
+  } else {
+    var i = player.enemies.indexOf(data);
+    player.enemies.splice(i, 1);
+  }
 }
 
 function contains(array, obj) {
   var i = array.length;
   while (i--) {
-    if (array[i].id === obj.id) {
+    if (array[i].id == obj.id) {
       return true;
     }
   }

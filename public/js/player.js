@@ -9,6 +9,7 @@ var Player = function() {
   this.icon;
   this.score = 0;
   this.enemies = [];
+  this.fallenEnemies = [];
 };
 
 Player.prototype.getLocation = function(geolocation) {

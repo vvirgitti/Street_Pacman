@@ -13,13 +13,19 @@ function queryGPStracker() {
 function updatePlayerLocation(position) {
   setPlayerCoords(position);
   updateMarkerPosition(player);
-  broadcastPlayerMovement(player);
-  eatPelletChance(player);
-  eatsWeak(player);
 
+  if(player.status == 'Pacman') {
+    eatPelletChance(player);
+  }
+
+  if(player.status == 'invincible') {
+    eatsWeak(player);
+  }
+
+  broadcastPlayerMovement(player);
   map.setCenter(coords.latitude, coords.longitude)
-  console.log(player.coordinates);
-  console.log(map.markers);
+  // console.log(player.coordinates);
+  // console.log(map.markers);
 }
 
 function errorCallback() {

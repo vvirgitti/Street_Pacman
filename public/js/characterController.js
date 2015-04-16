@@ -6,8 +6,8 @@ function setIcon() {
 }
 
 function getIcon(icon) {
-  var weak = 'weak'
-  var invincible = 'invincible'
+  var weak = 'weak';
+  var invincible = 'invincible';
 
   if (icon == 'Pacman'){
     player.icon = '/images/mini_Pacman.png';
@@ -23,15 +23,17 @@ function getIcon(icon) {
 
   function initStatus(icon) {
     if(icon == 'Pacman') {
-      player.tag = 'Pacman'
+      player.tag = 'Pacman';
       player.status = weak;
+      console.log(player.status)
     } else {
-      player.tag = 'Ghost'
+      player.tag = 'Ghost';
       player.status = invincible;
+      console.log(player.status)
     }
   }
-  initStatus(icon)
-  console.log(player.icon)
+  initStatus(icon);
+  console.log(player.icon);
 }
 
 function supports_html5_storage() {
