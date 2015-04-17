@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://maps.google.com/maps/api/js?sensor=true&libraries=geometry"></script>
   <script src="js/player.js"></script>
@@ -10,110 +11,50 @@
   <link rel="stylesheet" type="text/css" href="css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="css/app.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d|neon' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=outline">
-  <link href='http://fonts.googleapis.com/css?family=Lobster|Luckiest+Guy' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d|neon' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
-  <div class="hover-space">
-  <header>
-     <!-- <div class="logo">Tomasso-Guido-Vanessa-Diego</div> -->
-    <nav>
-
-      <ul>
-        <li><a href="/" class="font-effect-outline">Home</a></li>
-        <li><a href="/choose" class="font-effect-outline">New-Game</a></li>
-        <li><a href="http://www.makersacademy.com" target="_blank" class="font-effect-outline">Makers-Academy</a></li>
-      </ul>
-    </nav>
-  </header>
-</div>
-
-  <!-- <div class="header_choose">Choose your character</div> -->
-
-<div class="section hero">
-  <div class="container">
-    <div class="row">
-      <div class="twelve columns">
-        <h3>Pacman<h3>
-        <a href='/game'><img class="character" src="images/Pacman-player.jpg" id="Pacman"></a>
+  <div class="section hero twelve columns">
+      <div class="container">
+        <div class="row">
+          <h1 class='font-effect-3d header_choose'>Choose Your<br>Character</h1></div>
+        </div>
       </div>
-    </div>
   </div>
-</div>
 
-<div class="section hero twelve columns">
-    <div class="container">
-      <div class="row">
-        <h1 class='font-effect-3d header_choose'>Choose Your<br>Character</h1></div>
-      </div>
-    </div>
-</div>
-  <!-- <a href="/game"><div class="choose_picture"><img src="images/Pacman-player.jpg"></div></div>
-  <a href="/game"><div class="second"><button type="submit">Pacmanator</button></div></a>
+  <a href="/game"><img src="images/Pacman-player.jpg" class="character" id="Pacman"></div></div>
+  <a href="/game"><button type="submit" class="character" id="Pacman" style="color: #F3EA0C">Pacman</button></div></a>
 
-  <a href="/game"><div class="choose_picture"><img src="images/Bashful-player.jpg"></div></div>
-  <a href="/game"><div class="slim-shady"><button type="submit">Slim Shady</button></div></a>
+  <a href="/game"><img src="images/Bashful-player.jpg" class="character" id="Bashful"></div></div>
+  <a href="/game"><button type="submit" class="character" id="Bashful" style="color: #15ADE8">Sonic</button></div></a>
 
-  <a href="/game"><div class="choose_picture"><img src="images/Speedy-player.jpg"></div></div>
-  <a href="/game"><div class="pink-floyd"><button type="submit">Pink Floyd</button></div></a>
+  <a href="/game"><img src="images/Speedy-player.jpg" class="character" id="Speedy"></div></div>
+  <a href="/game"><button type="submit" class="character" id="Speedy" style="color: #F695B1">Kirby</button></div></a>
 
-  <a href="/game"><div class="choose_picture"><img src="images/Shadow-player.jpg"></div></div>
-  <a href="/game"><div class="kim-jong"><button type="submit">Super Mario</button></div></a>
+  <a href="/game"><img src="images/Shadow-player.jpg" class="character" id="Shadow"></div></div>
+  <a href="/game"><button type="submit" class="character" id="Shadow" style="color: #EC1920">Super Mario</button></div></a>
 
-<<<<<<< HEAD
-=======
-  <a href="/game"><div class="choose_picture"><img src="images/Pokey-player.jpg"></div></div>
-  <a href="/game"><div class="muther-fucker"><button type="submit">Muther fucker RIck</button></div></a>
-
-
-  <div class="section monster title">
-    <div class="container">
-      <div class="row">
-        <div class="three columns"><h3>Shadow</h3></div>
-        <div class="three columns"><h3>Speedy</h3></div>
-        <div class="three columns"><h3>Bashful</h3></div>
-        <div class="three columns"><h3>Pokey</h3></div>
-      </div>
-    </div>
-  </div>
->>>>>>> final_style -->
-
-  <div class="section monster">
-    <div class="container">
-      <div class="row">
-        <div class="three columns"><h3>Shadow</h3><a href='/game'><img class="character" src="images/Shadow-player.jpg" id="Shadow"></a></div>
-        <div class="three columns"><h3>Speedy</h3><a href='/game'><img class="character" src="images/Speedy-player.jpg" id="Speedy"></a></div>
-        <div class="three columns"><h3>Bashful</h3><a href="/game"><img class="character" src="images/Bashful-player.jpg" id="Bashful"></a></div>
-        <div class="three columns"><h3>Pokey</h3><a href="/game"><img class="character" src="images/Pokey-player.jpg" id="Pokey"></a></div>
-      </div>
-    </div>
-  </div>
+  <a href="/game"><img src="images/Pokey-player.jpg" class="character" id="Pokey"></div></div>
+  <a href="/game"><button type="submit" class="character" id="Pokey" style="color: #F47D1E">Crash Bandicoot</button></div></a>
 
   <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
   <script src="js/socket.js"></script>
 
-<script>
-$(document).ready(function(){
-  listenForChosenCharacter();
-  $('.character').on('click',function(){
-    playerIcon = $(this).attr('id');
-    var chooseIcon = JSON.stringify(playerIcon);
-    localStorage.setItem('data', chooseIcon);
-    hide(playerIcon);
+  <script>
+  $(document).ready(function(){
+    listenForChosenCharacter();
+    $('.character').on('click',function(){
+      playerIcon = $(this).attr('id');
+      var chooseIcon = JSON.stringify(playerIcon);
+      localStorage.setItem('data', chooseIcon);
+      hide(playerIcon);
+    });
   });
-});
-</script>
+  </script>
 
-  <footer id="page-footer"></footer>
-  <audio src="/audios/cars.wav" autoplay>
-  <p>If you are reading this, it is because your browser does not support the audio element.     </p>
+  <audio src="/audios/cars.mp3" autoplay>
+  <p>If you are reading this, it is because your browser does not support the audio element.</p>
   </audio>
-  <footer>
-    <!-- <a href="http://makersacademy.com" target="_blank">www.makersacademy.com</a> -->
-    Made by Guido, Tomasso, Vanessa and Diego.
-  </footer>
->>>>>>> final_style
+
 </body>
 </html>

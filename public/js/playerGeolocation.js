@@ -13,6 +13,7 @@ function queryGPStracker() {
 function updatePlayerLocation(position) {
   setPlayerCoords(position);
   updateMarkerPosition(player);
+  checkForDuplicateMarker();
 
   if(player.tag == 'Pacman') {
     eatPelletChance(player);
@@ -23,7 +24,7 @@ function updatePlayerLocation(position) {
   }
 
   broadcastPlayerMovement(player);
-  map.setCenter(coords.latitude, coords.longitude)
+  map.setCenter(coords.latitude, coords.longitude);
   // console.log(player.coordinates);
   // console.log(map.markers);
 }

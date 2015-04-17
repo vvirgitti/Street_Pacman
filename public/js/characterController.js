@@ -14,9 +14,9 @@ function getIcon(icon) {
   } else if (icon == 'Shadow'){
     player.icon = '/images/shadow-white.png';
   } else if (icon == 'Speedy'){
-    player.icon = '/images/Speedy-white.png';
+    player.icon = '/images/speedy-white.png';
   } else if (icon == 'Bashful'){
-    player.icon = '/images/Bashful-white.png';
+    player.icon = '/images/bashful-white.png';
   } else {
     player.icon = '/images/pokey-white.png';
   }

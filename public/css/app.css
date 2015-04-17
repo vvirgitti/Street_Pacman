@@ -1,40 +1,17 @@
-html, body {
+html, body, #map {
   background-color: black;
   height: 100%;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
-.image {
-  text-align: center;
+.fullscreen {
+  width: 100%;
+  height: 100%;
 }
 
-.test {
-  position: fixed;
-  top: 300px;
-  background-color: white;
-  text-align: center;
-  color: red;
-  height: 40px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'VT323', serif;
-  font-size: 200%;
-}
-
-.pacman {
-width: 110px;
-height: 110px;
-margin: 15px;
-padding: 30px;
--webkit-transition: all 1s ease;
-   -moz-transition: all 1s ease;
-     -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-        transition: all 1s ease;
-}
-
-.character {
+/*.character {
   float: left;
   width: 110px;
   height: 110px;
@@ -46,50 +23,38 @@ padding: 30px;
        -o-transition: all 1s ease;
       -ms-transition: all 1s ease;
           transition: all 1s ease;
-}
+}*/
 
-.character:hover {
+/*.character:hover {
   width: 150px;
   height: 150px;
+}*/
+
+.character img {
+  display: block;
+  margin: auto;
+   /*margin-bottom: 5px; */
+  height: 7rem;
 }
 
-.pacman:hover {
+/*.pacman:hover {
   width: 150px;
   height: 150px;
-}
+}*/
 
 #map {
-  width: 800px;
-  height: 400px;
+  width: 100%;
+  height: 800px !important;
   margin-bottom: 5rem;
-  /*width: 70rem;*/
- /* height: 40rem;*/
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
+
 
 .container {
   margin: 0px auto;
 }
 
-body {
-    background-color: black;
-    /*background-color: #D32D2D;*/
-    /*background-image: url('pacman_eating.gif')*/
-
-}
-
-  /*height: 50px;
-  overflow: hidden;
-  position: relative;
-  background: #C10606;
-  border-bottom: 5px solid red;
-  border-color: white;
-  box-shadow: 0px 10px 30px black;
-  color: white;
-  padding: 0 0 50px;
-  text-align: center;*/
-
 #content {
   background: #eee;
   width: 540px;
@@ -104,63 +69,20 @@ body {
 
 }
 
-
-header nav {
-  float: left !important
-}
-
-.header-shrink a.logo:hover {
-    background-position: 0 -53pt;
-    transform: rotate(360deg);
-    transition-duration: 0.8s;
-    transition-property: transform;
-}
-
-.header-shrink .logo {
-    background: url('http://hawkface.com/developer/test-logo.png') no-repeat 0 -53pt;
-    width: 70px;
-    transition: background-position 0.2s ease 0.0s;
-}
-
-#content {
-  background: #eee;
-  width: 540px;
-  margin: 0 auto;
-  padding: 130px 40px 0
-}
-
-@media screen and (max-width: 73.5em) {
-  #content {
-      font-size: 100%;
-  }
-
-}
-
-#page-footer {
-  font-family: 'Bangers', cursive;
-  height: 30px;
-  background: $mainColor;
-  position: relative;
-  border-top: 5px solid white;
-  color: white;
-  padding: 30px;
-  box-shadow: 0px -10px 30px black;
-  font-size: 1.2rem;
-}
 
 .main_header {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 7rem;
+  font-size: 5rem;
   color: white;
   margin-top: 7rem;
-  margin-bottom: 0px;
+  margin-bottom: 25px;
 }
 
 .header_choose {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: white;
   margin-top: 7rem;
   margin-bottom: 3rem;
@@ -171,7 +93,7 @@ h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 4rem;
   color: white;
-  margin-top: 7rem;
+  margin-top: 8rem;
   margin-bottom: 3rem;
 }
 
@@ -185,7 +107,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
   text-align: center;
   color: rgb(99, 215, 255);
@@ -194,23 +116,12 @@ h3 {
 
 p {
   color: white;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Press Start 2P', cursive;
   text-transform: lowercase;
   letter-spacing: 1px;
   text-align: center;
 }
 
-.timer {
-  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-  padding-bottom: 28rem;
-  padding-right: 12rem;
-}
-
-.instructions {
-  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-
-
-}
 
 .new_player {
   text-align: center;
@@ -237,17 +148,10 @@ p {
   height: 3rem;
 }
 
-.choose_picture img {
+.character  {
   display: block;
-  margin: auto;
-  /* margin-bottom: 1px; */
-  height: 7rem;
-}
-
-.choose_pictures  {
-  display: block;
-    margin-left: auto;
-    margin-right: auto
+  margin-left: auto;
+  margin-right: auto;
   height: 5rem;
 }
 
@@ -255,37 +159,24 @@ p {
   display: block;
     margin-left: auto;
     margin-right: auto;
-  height: 4rem;
-  margin-bottom: 50px;
-}
-
-a {
-  /*color: #F5FF24;*/
-}
-
-.button {
-
-  font-family: 'Press Start 2P', cursive;
-  display: block;
-  margin: 0 auto;
-  border-width: 100px;
-  border-color: white;
-  background-color: white;
-  margin-bottom: 50px;
+  height: 7rem;
+  margin-bottom: 10px;
 }
 
 button {
   font-family: 'Press Start 2P', cursive;
   vertical-align: middle;
   display: block;
-  margin: 40px auto;
+  margin: auto;
   padding: 45px 45px;
   font-size: 100%;
 /*  margin: 25px auto; */
-/* padding: 10px 20px; */
+ padding: 10px 20px;
 /*  font-size: 120%; */
   text-transform: uppercase;
   border-radius: 3.3em;
+  height: 50px;
+  border-color: white;
 
 
   background: #222630;
@@ -435,16 +326,18 @@ header .logo {
   position: absolute;
   left: 20px;
   color: black;
-  font-weight: 600;
-  font-family: 'Lobster', cursive;
+  font-weight: 300;
+  font-family: 'Press Start 2P', cursive;
 }
 
 header nav {
   position: absolute;
   left: 20px;
   color: black;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Press Start 2P', cursive;
 }
+
+
 
 /* Keyframes */
 @keyframes fadeout {
@@ -465,30 +358,18 @@ header nav {
   100%    { opacity: 0; }
 }
 
-/* Other */
-footer {
-  /*position: fixed;*/
+.image_end {
+  margin: auto;
+  padding: 20px 0 20px 0;
+}
+
+.invincible {
   position: absolute;
-  bottom: 0;
-  color: white;
-  height: 5rem;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-  font-family: 'Lobster', cursive;
-  font-size: 1.5rem;
-
-}
-
-footer p {
-  font-weight: 600;
-  height: 5rem;
-}
-
-footer, .push {
-  /* margin-top: 100%; */
-  height: 5rem; /* .push must be the same height as .footer */
-  /*clear: both;     position: relative;     z-index: 10;     height: 3em;    */
+  z-index:1;
+  display: block;
+  left: 100px;
+  top: 5px;
+  width: 122px;
+  height: 40px;
+  display:none;
 }

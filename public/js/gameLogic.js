@@ -1,3 +1,8 @@
+function broadcast1337() {
+  $('.invincible').show();
+  socket.emit('1337', { id: player.id });
+}
+
 function calculateDistance(obj) {
   var from = new google.maps.LatLng(player.coordinates.latitude, player.coordinates.longitude);
   var to = new google.maps.LatLng(obj.coordinates.latitude, obj.coordinates.longitude);
@@ -18,37 +23,25 @@ function eatPelletChance(player) {
     if(pelletDist < 10) {
       var i = pellets.indexOf(pellet);
       pellets.splice(i, 1);
+      if(player.status == 'weak') {
+        changePlayerStatus(player);
+      }
+      console.log(player.pelletsEaten)
       matchPelletToMarker(pellet);
-      statusLoop;
-      invictus(player);
+      broadcast1337();
       mortal(player);
-      console.log(player.status)
+      console.log(player.status);
     }
   }
 }
 
-var statusLoop = function(player) {
-  setInterval(invictus(player), 2000);
-}
-
-function invictus(player) {
-  player.status = 'invincible';
-  broadcast1337(player);
-}
-
 function mortal(player) {
-  clearInterval(statusLoop, 60000);
-  setTimeout(function() { revertToDefaultStatus(player) }, 60000);
-}
-
-function revertToDefaultStatus(player) {
-  player.status = 'weak';
-  broadcastRevertStatus(player);
+  setTimeout(function() { changePlayerStatus(player) }, 60000);
 }
 
 function matchPelletToMarker(pellet) {
   for(i = 0; i < map.markers.length; i++) {
-    var marker = map.markers[i]
+    var marker = map.markers[i];
     if(marker.title == pellet.id) {
       map.removeMarker(marker);
     }
@@ -69,7 +62,7 @@ function eatsWeak(player) {
   for(i = 0; i < player.enemies.length; i++ ) {
     var enemy = player.enemies[i];
     var enemyDist = calculateDistance(enemy);
-    if (enemyDist < 10) {
+    if (enemyDist < 10 && enemy.status == 'weak') {
       player.fallenEnemies.push(enemy);
       player.enemies.splice(i, 1);
       matchEnemyToMarker(enemy);

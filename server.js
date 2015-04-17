@@ -16,8 +16,6 @@ var coords = {
   longitude: undefined
 };
 
-app.use(express.static('public'));
-
 throng(start, {
   workers: WORKERS,
   lifetime: Infinity
@@ -43,7 +41,7 @@ function start() {
     console.log('user ' + socket.id + ' connected');
 
     socket.on('player moves', function(player) {
-      socket.broadcast.emit('new player location', { id: player.id, coordinates: player.coordinates, icon: player.icon });
+      socket.broadcast.emit('new player location', { id: player.id, coordinates: player.coordinates, icon: player.icon, status: player.status });
     });
 
     socket.on('disconnect', function() {
@@ -61,10 +59,7 @@ function start() {
 
     socket.on('1337', function(data) {
       socket.broadcast.emit('player 1337', data);
-    });
-
-    socket.on('revert to default', function(data) {
-      socket.emit('end of 1337', data)
+      console.log(data)
     });
 
     socket.on('hide character icon', function(data){

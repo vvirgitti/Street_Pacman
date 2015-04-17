@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Street Pacman </title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://maps.google.com/maps/api/js?sensor=true&libraries=geometry"></script>
   <script src="js/gmaps.js"></script>
@@ -18,99 +18,55 @@
   <link rel="stylesheet" type="text/css" href="css/skeleton.css">
   <link rel="stylesheet" type="text/css" href="css/app.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d-float' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Bangers&effect=neon|3d' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d|neon|fire' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=outline">
-  <link href='http://fonts.googleapis.com/css?family=Lobster|Luckiest+Guy' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d-float' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Press+Start+2P&effect=3d|neon|fire' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
-  <div class="hover-space">
-  <header>
-     <!-- <div class="logo">Tomasso-Guido-Vanessa-Diego</div> -->
-    <nav>
+  <div class="container-invincible">
+    <div class="invincible"><img src="images/invincible.jpg"></div>
+  </div>
 
-<!-- <<<<<<< HEAD -->
-  <div id="gameOver" style="position:absolute; z-index:1"><img src="images/game-over.jpg" style="display:none"></div>
-  <div id="youWin" style="position:absolute; z-index:1"><img src="images/you-win.jpg" style="display:none"></div>
 
-  <p div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:white"> Pacman is invincible </p>
-<!-- ======= -->
-      <ul>
-        <li><a href="/" class="font-effect-outline">Home</a></li>
-        <li><a href="/choose" class="font-effect-outline">New-Game</a></li>
-        <li><a href="http://www.makersacademy.com" target="_blank" class="font-effect-outline">Makers-Academy</a></li>
-      </ul>
-    </nav>
-  </header>
-</div>
-<!-- >>>>>>> final_style -->
-<div id="gameOver" style="position:absolute; z-index:1"><img src="images/game-over.jpg" style="display:none"></div>
-  <div id="youWin" style="position:absolute; z-index:1"><img src="images/you-win.jpg" style="display:none"></div>
-
-  <p div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:white"> Pacman is invincible </p>
-
-  <!-- <div id="pacman_lights"><img src="images/pacman_lights.gif"></div> -->
-  <div class="section hero twelve columns">
-    <div class="container">
-      <div class="row">
-<!-- <<<<<<< HEAD -->
-        <div class="twelve columns">
-          <div id="map" style="position:absolute; z-index:0"></div>
-<!-- ======= -->
-        <h1>Game Starts!</h1></div>
-      </div>
-    </div>
-</div>
-
-<div class="container">
-  <div class="row">
-
-    <div class="two columns timer">
-      <h2>Timer <br><br> 5:00</h2>
-    </div>
-
-    <div class="eight columns">
-      <div class="section map">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="container section map">
           <div id="map"></div>
-<!-- >>>>>>> final_style -->
             <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
             <script src="js/socket.js"></script>
             <script>
-            var map = new GMaps({
-              el: '#map',
-              lat: -12.043333,
-              lng: -77.028333
-            });
-              map.setZoom(20);
+              var map = new GMaps({
+                el: '#map',
+                lat: 51.517467,
+                lng: -0.073424,
+                disableDefaultUI: true
+              });
+                map.setZoom(18);
+
+
+                function detectBrowser() {
+                    var useragent = navigator.userAgent;
+                    var mapdiv = document.getElementById("map");
+
+                    if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
+                      mapdiv.style.width = '100%';
+                      mapdiv.style.height = '100%';
+                    } else {
+                      mapdiv.style.width = '600px';
+                      mapdiv.style.height = '800px';
+                    }
+                  }
             </script>
+        </div>
       </div>
     </div>
-
-<!-- ======= STYLING STUFF ======= -->
- <!--    <div class="two columns instructions">
-      <h3>This are the game instructions</h3>
-      <p>the game consists of Pacman getting the pebbles in order to change
-        his status and being able to eat the ghosts!</p>
-    </div>
-
   </div>
-</div>
 
-<img class="game_picture" src="images/pacman_lights.gif">
+  <audio src="/audios/pacman_beginning.mp3" >
+  <p>If you are reading this, it is because your browser does not support the audio element.</p>
+  </audio>
 
-  <!-- <div class="test">
-    <a href="/">Home</a>
-    <a href="/game">Start Again</a>
-  </div> -->
-<!-- <audio src="/audios/pacman_beginning.wav" >
-<p>If you are reading this, it is because your browser does not support the audio element.     </p>
-</audio> -->
-<footer id="page-footer">
-  <!-- <a href="http://makersacademy.com" target="_blank">www.makersacademy.com</a> -->
-</footer>
 </body>
 </html>

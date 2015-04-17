@@ -17,6 +17,7 @@ $(document).ready(function() {
   listenForEnemyLocation();
   listenForEnemyEscape();
   listenForPwning();
+  listenFor1337();
   queryGPStracker();
   geolocQueryLoop;
 });
