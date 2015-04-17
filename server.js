@@ -59,10 +59,7 @@ function start() {
 
     socket.on('1337', function(data) {
       socket.broadcast.emit('player 1337', data);
-    });
-
-    socket.on('revert to default', function(data) {
-      socket.emit('end of 1337', data);
+      console.log(data)
     });
 
     socket.on('hide character icon', function(data){

@@ -13,7 +13,6 @@ socket.on('connect', function() {
 function listenForPwning() {
   socket.on('player pwned', function(data) {
     console.log('pwning in progress...');
-    console.log(player.status);
     isPwned(data);
   });
 }
@@ -22,7 +21,7 @@ function listenForEnemyLocation() {
   socket.on('new player location', function(data) {
     checkForEnemyRedundancy(data);
     checkForUndefId();
-    if(contains(player.fallenEnemies, data) === false && contains(player.enemies, data) === true) {
+    if(contains(player.fallenEnemies, data) == false && contains(player.enemies, data) == true) {
       updateEnemyLocation(data);
     }
   });
@@ -70,22 +69,8 @@ function broadcastPwnMsg(enemy) {
   socket.emit('pwned', { id: enemy.id });
 }
 
-function broadcast1337(player) {
-  socket.emit('1337', { id: player.id, status: player.status });
-}
-
-function broadcastRevertStatus(player) {
-  socket.emit('revert to default', { id: player.id, status: player.status });
-}
-
-function listenForEndOf1337() {
-  socket.on('end of 1337', function(data) {
-    changePlayerStatus(data);
-  });
-}
-
-function changePlayerStatus(data) {
-  if(player.id == data.id && player.status == 'weak') {
+function changePlayerStatus(player) {
+  if(player.status == 'weak') {
     player.status = 'invincible';
   } else {
     player.status = 'weak';
@@ -94,7 +79,9 @@ function changePlayerStatus(data) {
 
 function listenFor1337() {
   socket.on('player 1337', function(data) {
-    changePlayerStatus(data);
+    changePlayerStatus(player);
+    console.log(player.status);
+    // setTimeout(changePlayerStatus(player), 60000);
   });
 }
 
@@ -104,6 +91,7 @@ function isPwned(data) {
     removeCustomMarker(player);
     window.location.replace('/lost');
   } else {
+    removeEnemy(data);
     youWin(data);
   }
 }
@@ -111,14 +99,14 @@ function isPwned(data) {
 function checkForUndefId() {
   for(i = 0; i < player.enemies.length; i++) {
     var enemy = player.enemies[i];
-    if(enemy.id === undefined) {
+    if(enemy.id == undefined) {
       player.enemies.splice(i, 1);
     }
   }
 }
 
 function checkForEnemyRedundancy(data) {
-  if(contains(player.enemies, data) === false && contains(player.fallenEnemies, data) === false) {
+  if(contains(player.enemies, data) == false && contains(player.fallenEnemies, data) == false) {
     player.enemies.push(data);
   } else {
     var i = player.enemies.indexOf(data);
@@ -143,7 +131,7 @@ function broadcastPlayerChosen(iconName) {
 function checkForDuplicateMarker() {
   for(i = 0; i < map.markers.length; i++) {
     var marker = map.markers[i];
-    if(marker.title === undefined ) {
+    if(marker.title == undefined ) {
       map.removeMarker(marker);
     }
   }
@@ -156,11 +144,11 @@ function listenForChosenCharacter() {
 }
 
 function youWin(data) {
-  for(i = 0; i < player.fallenEnemies.length; i++) {
-    var enemyEaten = player.fallenEnemies[i];
-    if(enemyEaten.id == data.id ) {
-      removeEnemy(data);
+  if(player.tag == 'Pacman') {
+    if(player.fallenEnemies.length == 4) {
       window.location.replace('/won');
     }
+  } else {
+    window.location.replace('/won');
   }
 }
