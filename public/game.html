@@ -27,8 +27,7 @@
   <div class="twelve columns">
     <div class="container">
       <div class="row">
-
-        <!-- <p div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:white"> Pacman is invincible </p> -->
+        <h3 div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:blue"> Pacman is invincible !</h3>
       </div>
     </div>
   </div>
@@ -44,9 +43,11 @@
               var map = new GMaps({
                 el: '#map',
                 lat: 51.517467,
-                lng: -0.073424
+                lng: -0.073424,
+                disableDefaultUI: true
               });
                 map.setZoom(18);
+
 
                 function detectBrowser() {
                     var useragent = navigator.userAgent;
