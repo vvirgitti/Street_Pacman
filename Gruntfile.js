@@ -67,8 +67,8 @@ module.exports = function(grunt) {
           'lib/gmaps.utils.js',
           'lib/gmaps.native_extensions.js',
           'public/js/player.js',
-          'public/js/pellet.js',
-          ] 
+          'public/js/pellet.js'
+          ]
     },
 
     watch : {
@@ -77,7 +77,18 @@ module.exports = function(grunt) {
     },
 
     jshint : {
-      all : ['Gruntfile.js', 'public/js/*.js']
+      all : [
+      'Gruntfile.js',
+      'public/js/*.js',
+      'public/js/player.js',
+      'public/js/pellet.js',
+      'public/js/playerGeolocation',
+      'public/js/socket.js',
+      'public/js/gameLogic.js',
+      'public/js/gameController.js',
+      'public/js/characterController.js',
+      'public/js/markerHelpers.js'
+      ]
     },
 
     umd : {

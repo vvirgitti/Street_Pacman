@@ -9,7 +9,7 @@ describe('Pellet', function() {
       lon = 3.5;
 
       pellet.setPosition(lat, lon);
-      expect(pellet.coordinates).toEqual({lat: lat, lng: lon});
+      expect(pellet.coordinates).toEqual({latitude: lat, longitude: lon});
     });
   });
 });
