@@ -33,7 +33,7 @@ html, body, #map {
 .character img {
   display: block;
   margin: auto;
-  /* margin-bottom: 1px; */
+   /*margin-bottom: 5px; */
   height: 7rem;
 }
 
@@ -122,17 +122,6 @@ p {
   text-align: center;
 }
 
-.timer {
-  /*background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");*/
-  padding-bottom: 4rem;
-  padding-right: 12rem;
-}
-
-.instructions {
-  background-image: url("http://pic.sc.chinaz.com/files/pic/pic9/201202/xpic3078.jpg");
-
-
-}
 
 .new_player {
   text-align: center;
@@ -161,8 +150,8 @@ p {
 
 .character  {
   display: block;
-    margin-left: auto;
-    margin-right: auto
+  margin-left: auto;
+  margin-right: auto;
   height: 5rem;
 }
 
