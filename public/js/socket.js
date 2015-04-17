@@ -105,7 +105,8 @@ function isPwned(data) {
   if(data.id == player.id) {
     clearInterval(geolocQueryLoop);
     removeCustomMarker(player);
-    alert("you've been pwned!!!");
+    // alert("you've been pwned!!!");
+    window.location.replace('/lost');
   } else {
     removeEnemy(data);
   }
@@ -157,4 +158,3 @@ function listenForChosenCharacter() {
     hide(data.icon);
   });
 }
-

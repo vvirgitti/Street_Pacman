@@ -33,4 +33,12 @@ module.exports=function(app) {
     res.render('choose.html')
   });
 
+  app.get('/lost', function(req,res){
+    res.render('lost.html')
+  });
+
+  app.get('/won', function(req,res){
+    res.render('won.html')
+  });
+
 }
