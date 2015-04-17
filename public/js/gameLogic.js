@@ -15,7 +15,7 @@ function eatPelletChance(player) {
   for(i = 0; i < pellets.length; i++) {
   var pellet = pellets[i];
   var pelletDist = calculateDistance(pellet);
-    if(pelletDist < 10) {
+    if(pelletDist < 200) {
       var i = pellets.indexOf(pellet);
       pellets.splice(i, 1);
       matchPelletToMarker(pellet);

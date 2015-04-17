@@ -362,3 +362,14 @@ header nav {
   margin: auto;
   padding: 20px 0 20px 0;
 }
+
+.invincible {
+  position: absolute;
+  z-index:1;
+  display: block;
+  left: 100px;
+  top: 5px;
+  width: 122px;
+  height: 40px;
+  display:none;
+}
