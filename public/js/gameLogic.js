@@ -1,4 +1,5 @@
 function broadcast1337() {
+  $('.invincible').show();
   socket.emit('1337', { id: player.id });
 }
 
@@ -19,20 +20,23 @@ function eatPelletChance(player) {
   for(i = 0; i < pellets.length; i++) {
   var pellet = pellets[i];
   var pelletDist = calculateDistance(pellet);
-    if(pelletDist < 200) {
+    if(pelletDist < 10) {
       var i = pellets.indexOf(pellet);
       pellets.splice(i, 1);
+      if(player.status == 'weak') {
+        changePlayerStatus(player);
+      }
+      console.log(player.pelletsEaten)
       matchPelletToMarker(pellet);
-      changePlayerStatus(player);
       broadcast1337();
-      setTimeout(mortal(player), 60000);
-      console.log(player.status)
+      mortal(player);
+      console.log(player.status);
     }
   }
 }
 
 function mortal(player) {
-  changePlayerStatus(player);
+  setTimeout(function() { changePlayerStatus(player) }, 60000);
 }
 
 function matchPelletToMarker(pellet) {
