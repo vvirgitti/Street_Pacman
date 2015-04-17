@@ -76,7 +76,7 @@ html, body, #map {
   font-size: 5rem;
   color: white;
   margin-top: 7rem;
-  margin-bottom: 0px;
+  margin-bottom: 25px;
 }
 
 .header_choose {
@@ -356,4 +356,20 @@ header nav {
   0%      { opacity: 1; }
   75%     { opacity: 1; }
   100%    { opacity: 0; }
+}
+
+.image_end {
+  margin: auto;
+  padding: 20px 0 20px 0;
+}
+
+.invincible {
+  position: absolute;
+  z-index:1;
+  display: block;
+  left: 100px;
+  top: 5px;
+  width: 122px;
+  height: 40px;
+  display:none;
 }

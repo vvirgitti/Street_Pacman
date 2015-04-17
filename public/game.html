@@ -24,14 +24,10 @@
 
 <body>
 
-  <div class="twelve columns">
-    <div class="container">
-      <div class="row">
-
-        <!-- <p div="invinciblePacman" style="position:absolute; z-index:1; text-align:center; color:white"> Pacman is invincible </p> -->
-      </div>
-    </div>
+  <div class="container-invincible">
+    <div class="invincible"><img src="images/invincible.jpg"></div>
   </div>
+
 
   <div class="container">
     <div class="row">
@@ -44,9 +40,11 @@
               var map = new GMaps({
                 el: '#map',
                 lat: 51.517467,
-                lng: -0.073424
+                lng: -0.073424,
+                disableDefaultUI: true
               });
                 map.setZoom(18);
+
 
                 function detectBrowser() {
                     var useragent = navigator.userAgent;
