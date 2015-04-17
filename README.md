@@ -29,9 +29,7 @@ Features:
 - Retro design
 
 For more info, get in touch with the team:
-- ![Diego](https://avatars1.githubusercontent.com/u/10360735?v=3&s=460) - [Diego]:https://github.com/jdiegoromero
-- ![Guido](https://avatars1.githubusercontent.com/u/10268884?v=3&s=460) - [Guido]:https://github.com/guidovitafinzi
-- ![Tommaso](https://avatars1.githubusercontent.com/u/10244235?v=3&s=460) - [Tommaso]:https://github.com/tommasobratto
-- ![Vanessa](https://avatars0.githubusercontent.com/u/10236105?v=3&s=100) - [Vanessa]:https://github.com/vvirgitti
-
-https://avatars2.githubusercontent.com/u/10244235?v=3&s=120
+- ![Diego](https://avatars2.githubusercontent.com/u/10360735?v=3&s=120) - Diego[Diego]:https://github.com/jdiegoromero
+- ![Guido](https://avatars2.githubusercontent.com/u/10268884?v=3&s=120) - Guido:https://github.com/guidovitafinzi
+- ![Tommaso](https://avatars2.githubusercontent.com/u/10244235?v=3&s=120) - Tommaso:https://github.com/tommasobratto
+- ![Vanessa](https://avatars0.githubusercontent.com/u/10236105?v=3&s=100) - [Vanessa Virgitti]:https://github.com/vvirgitti
