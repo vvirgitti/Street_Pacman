@@ -73,7 +73,7 @@ html, body, #map {
 .main_header {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 7rem;
+  font-size: 5rem;
   color: white;
   margin-top: 7rem;
   margin-bottom: 0px;
@@ -82,7 +82,7 @@ html, body, #map {
 .header_choose {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: white;
   margin-top: 7rem;
   margin-bottom: 3rem;
@@ -326,7 +326,7 @@ header .logo {
   position: absolute;
   left: 20px;
   color: black;
-  font-weight: 600;
+  font-weight: 300;
   font-family: 'Press Start 2P', cursive;
 }
 
