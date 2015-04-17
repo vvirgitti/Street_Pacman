@@ -62,7 +62,7 @@ function start() {
     });
 
     socket.on('revert to default', function(data) {
-      socket.emit('end of 1337', data)
+      socket.emit('end of 1337', data);
     });
 
     socket.on('hide character icon', function(data){

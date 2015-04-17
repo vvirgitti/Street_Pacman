@@ -48,7 +48,7 @@ function revertToDefaultStatus(player) {
 
 function matchPelletToMarker(pellet) {
   for(i = 0; i < map.markers.length; i++) {
-    var marker = map.markers[i]
+    var marker = map.markers[i];
     if(marker.title == pellet.id) {
       map.removeMarker(marker);
     }

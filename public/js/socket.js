@@ -12,8 +12,8 @@ socket.on('connect', function() {
 
 function listenForPwning() {
   socket.on('player pwned', function(data) {
-    console.log('pwning in progress...')
-    console.log(player.status)
+    console.log('pwning in progress...');
+    console.log(player.status);
     isPwned(data);
   });
 }
@@ -22,7 +22,7 @@ function listenForEnemyLocation() {
   socket.on('new player location', function(data) {
     checkForEnemyRedundancy(data);
     checkForUndefId();
-    if(contains(player.fallenEnemies, data) == false && contains(player.enemies, data) == true) {
+    if(contains(player.fallenEnemies, data) === false && contains(player.enemies, data) === true) {
       updateEnemyLocation(data);
     }
   });
@@ -36,7 +36,7 @@ function listenForEnemyEscape() {
 
 function removeEnemy(data) {
   for(i = 0; i < player.enemies.length; i++) {
-    var enemy = player.enemies[i]
+    var enemy = player.enemies[i];
     if(enemy.id == data.id) {
       player.enemies.splice(i, 1);
       removeCustomMarker(enemy);
@@ -46,7 +46,7 @@ function removeEnemy(data) {
 
 function updateEnemyLocation(data) {
   for(i = 0; i < player.enemies.length; i++) {
-    var enemy = player.enemies[i]
+    var enemy = player.enemies[i];
     if(enemy.id == data.id) {
       enemy.coordinates = data.coordinates;
       enemy.icon = data.icon;
@@ -60,10 +60,7 @@ function broadcastPlayerMovement(player) {
   // every time a GPS tracker query is sent
   socket.emit('player moves', {
     id: socket.id,
-    coordinates: {
-      latitude: player.coordinates.latitude,
-      longitude: player.coordinates.longitude
-    },
+    coordinates: player.coordinates,
     icon: player.icon,
     status: player.status
   });
@@ -78,7 +75,7 @@ function broadcast1337(player) {
 }
 
 function broadcastRevertStatus(player) {
-  socket.emit('revert to default', {id: player.id, status: player.status})
+  socket.emit('revert to default', { id: player.id, status: player.status });
 }
 
 function listenForEndOf1337() {
@@ -105,25 +102,23 @@ function isPwned(data) {
   if(data.id == player.id) {
     clearInterval(geolocQueryLoop);
     removeCustomMarker(player);
-    // alert("you've been pwned!!!");
     window.location.replace('/lost');
   } else {
-    removeEnemy(data);
-    window.location.replace('/won');
+    youWin(data);
   }
 }
 
 function checkForUndefId() {
   for(i = 0; i < player.enemies.length; i++) {
     var enemy = player.enemies[i];
-    if(enemy.id == undefined) {
+    if(enemy.id === undefined) {
       player.enemies.splice(i, 1);
     }
   }
 }
 
 function checkForEnemyRedundancy(data) {
-  if(contains(player.enemies, data) == false && contains(player.fallenEnemies, data) == false) {
+  if(contains(player.enemies, data) === false && contains(player.fallenEnemies, data) === false) {
     player.enemies.push(data);
   } else {
     var i = player.enemies.indexOf(data);
@@ -148,7 +143,7 @@ function broadcastPlayerChosen(iconName) {
 function checkForDuplicateMarker() {
   for(i = 0; i < map.markers.length; i++) {
     var marker = map.markers[i];
-    if(marker.title == undefined ) {
+    if(marker.title === undefined ) {
       map.removeMarker(marker);
     }
   }
@@ -158,4 +153,14 @@ function listenForChosenCharacter() {
   socket.on('hide chosen character icon', function(data) {
     hide(data.icon);
   });
+}
+
+function youWin(data) {
+  for(i = 0; i < player.fallenEnemies.length; i++) {
+    var enemyEaten = player.fallenEnemies[i];
+    if(enemyEaten.id == data.id ) {
+      removeEnemy(data);
+      window.location.replace('/won');
+    }
+  }
 }
