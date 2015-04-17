@@ -109,6 +109,7 @@ function isPwned(data) {
     window.location.replace('/lost');
   } else {
     removeEnemy(data);
+    window.location.replace('/won');
   }
 }
 
