@@ -29,7 +29,7 @@ The game ends when either Pacman gets tag when is is vulnerable or when Pacman t
 - Retro design
 
 
-#### Future iterations
+#### Future iterations:
 - Convert the app into a cross device native mobile app with Phone Gap
 - Extend the multiplayer functionality by creating lobbies (create several rooms of 5 players)
 - Enhance performance
