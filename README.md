@@ -34,7 +34,7 @@ The game ends when either Pacman gets tag when is is vulnerable or when Pacman t
 - Extend the multiplayer functionality by creating lobbies (create several rooms of 5 players)
 - Enhance performance
 - Add database storage for user login, scores, standings...
-- 
+
 
 #### For more info, get in touch with the team:
 - ![Diego](https://avatars2.githubusercontent.com/u/10360735?v=3&s=120) - [Diego](https://github.com/jdiegoromero)
